@@ -1,0 +1,2966 @@
+{
+ "generatedAt": "2026-10-10T06:28:19.403Z",
+ "chars": [
+  {
+   "char": "年",
+   "expected": 6,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "希",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "望",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "坐",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "位",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "本",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "淡",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "書",
+   "expected": 10,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "老",
+   "expected": 6,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "師",
+   "expected": 10,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "以",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "為",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "故",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "用",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "力",
+   "expected": 2,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "只",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "現",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "還",
+   "expected": 17,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "全",
+   "expected": 6,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "蛋",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "煎",
+   "expected": 13,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "圓",
+   "expected": 13,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "番",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "茄",
+   "expected": 9,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 8
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "切",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "輪",
+   "expected": 15,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "司",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "夾",
+   "expected": 7,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "吐",
+   "expected": 6,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "中",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "方",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "城",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "堡",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "接",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "畫",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "臉",
+   "expected": 17,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "巷",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "叔",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "貓",
+   "expected": 16,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "屋",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "捧",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "蝴",
+   "expected": 15,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "蝶",
+   "expected": 15,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "忙",
+   "expected": 6,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "娶",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "娘",
+   "expected": 10,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "黃",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "筆",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "打",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "扮",
+   "expected": 7,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "樣",
+   "expected": 15,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "越",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "美",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "麗",
+   "expected": 19,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "運",
+   "expected": 13,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "動",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "飄",
+   "expected": 20,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "熱",
+   "expected": 15,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "鬧",
+   "expected": 15,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "舞",
+   "expected": 14,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "哇",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "往",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "容",
+   "expected": 10,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "步",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "汗",
+   "expected": 6,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "腳",
+   "expected": 13,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "協",
+   "expected": 8,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "聲",
+   "expected": 17,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "河",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "氣",
+   "expected": 10,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "最",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "可",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "木",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "偶",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "鄉",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "南",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "暑",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "假",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "帶",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "池",
+   "expected": 6,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "牛",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "旁",
+   "expected": 10,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "邊",
+   "expected": 19,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "演",
+   "expected": 14,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "叫",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "原",
+   "expected": 10,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "站",
+   "expected": 10,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "竿",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "田",
+   "expected": 5,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "識",
+   "expected": 19,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "鎮",
+   "expected": 18,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "餅",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "節",
+   "expected": 13,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "活",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "進",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "排",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "遠",
+   "expected": 14,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "籃",
+   "expected": 20,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "近",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "愛",
+   "expected": 13,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "月",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "乾",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "甜",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "客",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "買",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "親",
+   "expected": 16,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "如",
+   "expected": 6,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "意",
+   "expected": 13,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "衣",
+   "expected": 6,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "胖",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "針",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "簡",
+   "expected": 18,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "單",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "聰",
+   "expected": 17,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "明",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "臣",
+   "expected": 6,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "敢",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "東",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "西",
+   "expected": 6,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "直",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "棒",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "街",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "滿",
+   "expected": 14,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "眼",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "哪",
+   "expected": 10,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "思",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "渴",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "烏",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "喝",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "瓶",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "法",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "森",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "林",
+   "expected": 8,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "物",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "旅",
+   "expected": 10,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "行",
+   "expected": 6,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "午",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "裝",
+   "expected": 13,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "許",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "石",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "難",
+   "expected": 19,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "忘",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "哈",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "但",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "象",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "操",
+   "expected": 16,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "粗",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "腿",
+   "expected": 14,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "柱",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "砍",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "幾",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "部",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "搖",
+   "expected": 13,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "沖",
+   "expected": 7,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "首",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "牽",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "沉",
+   "expected": 7,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "少",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "沿",
+   "expected": 8,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "然",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "紀",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "竟",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "冬",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "灰",
+   "expected": 6,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "北",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "冷",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "飛",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "牠",
+   "expected": 7,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "發",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "冒",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "煙",
+   "expected": 13,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "圍",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "飯",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "咪",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "團",
+   "expected": 14,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "聚",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "愉",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "火",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "鍋",
+   "expected": 17,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "妙",
+   "expected": 7,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "皮",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "色",
+   "expected": 6,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "具",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "者",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "洋",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "寒",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "嘴",
+   "expected": 16,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "伸",
+   "expected": 7,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "飽",
+   "expected": 13,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "泥",
+   "expected": 8,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "沙",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "慌",
+   "expected": 13,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 12
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "服",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "翅",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "膀",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "充",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "等",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "念",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "雪",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "梨",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "夜",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "卻",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "因",
+   "expected": 6,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "臺",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "季",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "相",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "反",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "吹",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "待",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "綻",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "雖",
+   "expected": 17,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "春",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "貨",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "期",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "敬",
+   "expected": 13,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 12
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "孫",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "泳",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "串",
+   "expected": 7,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "般",
+   "expected": 10,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "姿",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "溜",
+   "expected": 13,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "耳",
+   "expected": 6,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "鷹",
+   "expected": 24,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "滑",
+   "expected": 13,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 12
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "遨",
+   "expected": 15,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 13
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "緩",
+   "expected": 15,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "陀",
+   "expected": 8,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 7
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "螺",
+   "expected": 17,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "轉",
+   "expected": 18,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "躍",
+   "expected": 21,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "煩",
+   "expected": 13,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "招",
+   "expected": 8,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "湯",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "拋",
+   "expected": 8,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "糧",
+   "expected": 18,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "姐",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "爭",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "警",
+   "expected": 20,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "偷",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "則",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "繩",
+   "expected": 19,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "依",
+   "expected": 8,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "捨",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "束",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "暫",
+   "expected": 15,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "幸",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "社",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "邀",
+   "expected": 17,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 16
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "與",
+   "expected": 14,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 13
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "遙",
+   "expected": 14,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 13
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "投",
+   "expected": 7,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "熟",
+   "expected": 15,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "巧",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "彈",
+   "expected": 15,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "曾",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "揮",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "彼",
+   "expected": 8,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "秒",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "喧",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "優",
+   "expected": 17,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "弧",
+   "expected": 8,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "偕",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "醫",
+   "expected": 18,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "命",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "奉",
+   "expected": 8,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "獻",
+   "expected": 20,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "療",
+   "expected": 17,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "衛",
+   "expected": 15,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "藥",
+   "expected": 19,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "治",
+   "expected": 8,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "翻",
+   "expected": 18,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "嶺",
+   "expected": 17,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "捐",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "宿",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "堂",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "濃",
+   "expected": 16,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "凱",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "勒",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "業",
+   "expected": 13,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "勵",
+   "expected": 17,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "寧",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "視",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "注",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "憑",
+   "expected": 16,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "蓓",
+   "expected": 14,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 13
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "蕾",
+   "expected": 17,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 16
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "何",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "毯",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "適",
+   "expected": 15,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "繽",
+   "expected": 20,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "盡",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "秀",
+   "expected": 7,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "稱",
+   "expected": 14,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "朗",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "登",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "穆",
+   "expected": 16,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "瑪",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "峰",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "母",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "酷",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "磨",
+   "expected": 16,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "攀",
+   "expected": 19,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "氧",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "訓",
+   "expected": 10,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "谷",
+   "expected": 7,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "響",
+   "expected": 21,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "薄",
+   "expected": 17,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 16
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "烙",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "沾",
+   "expected": 8,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "咖",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "哩",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "印",
+   "expected": 6,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "甩",
+   "expected": 5,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "村",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "醬",
+   "expected": 18,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "義",
+   "expected": 13,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "麵",
+   "expected": 20,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "郁",
+   "expected": 9,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 8
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "壽",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "醋",
+   "expected": 15,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "未",
+   "expected": 5,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "臨",
+   "expected": 17,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "樓",
+   "expected": 15,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "頸",
+   "expected": 16,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "代",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "濟",
+   "expected": 17,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "阻",
+   "expected": 8,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 7
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "尼",
+   "expected": 5,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "器",
+   "expected": 16,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "震",
+   "expected": 15,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "京",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "晴",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "塔",
+   "expected": 13,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 12
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "訊",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "吉",
+   "expected": 6,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "橋",
+   "expected": 16,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "佛",
+   "expected": 7,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "泰",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "廟",
+   "expected": 15,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "華",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "尚",
+   "expected": 8,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "逛",
+   "expected": 11,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 10
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "埃",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "羅",
+   "expected": 19,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "勢",
+   "expected": 13,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "窪",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "堤",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "防",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "潮",
+   "expected": 15,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "鬱",
+   "expected": 29,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "划",
+   "expected": 6,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "幻",
+   "expected": 4,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "旋",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "扁",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "瞬",
+   "expected": 17,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "驗",
+   "expected": 23,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "牙",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "芝",
+   "expected": 8,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 6
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "盜",
+   "expected": 12,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "邁",
+   "expected": 17,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 16
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "困",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "龐",
+   "expected": 19,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "搓",
+   "expected": 13,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 12
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "榮",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "富",
+   "expected": 12,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "遍",
+   "expected": 13,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "背",
+   "expected": 9,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "錶",
+   "expected": 16,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "掉",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "深",
+   "expected": 11,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "鎖",
+   "expected": 18,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "鑰",
+   "expected": 25,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "匙",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "汁",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "示",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "追",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [
+    {
+     "source": "animcjk-zhHant",
+     "count": 10
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "袋",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "哭",
+   "expected": 10,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "盒",
+   "expected": 11,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "扇",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "遲",
+   "expected": 16,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "妻",
+   "expected": 8,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "耐",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "革",
+   "expected": 9,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "賣",
+   "expected": 15,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "倍",
+   "expected": 10,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "謎",
+   "expected": 17,
+   "source": null,
+   "rejected": [
+    {
+     "source": "hanzi-writer-data",
+     "count": 16
+    }
+   ],
+   "overrideMismatch": false
+  },
+  {
+   "char": "鐘",
+   "expected": 20,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "敲",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "靈",
+   "expected": 24,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "鎚",
+   "expected": 18,
+   "source": null,
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "嘖",
+   "expected": 14,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "足",
+   "expected": 7,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "蹈",
+   "expected": 17,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "蹦",
+   "expected": 18,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "內",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "土",
+   "expected": 3,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "士",
+   "expected": 3,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "人",
+   "expected": 2,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "入",
+   "expected": 2,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "大",
+   "expected": 3,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "太",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "犬",
+   "expected": 4,
+   "source": "hanzi-writer-data",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "日",
+   "expected": 4,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "目",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "末",
+   "expected": 5,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "己",
+   "expected": 3,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  },
+  {
+   "char": "已",
+   "expected": 3,
+   "source": "animcjk-zhHant",
+   "rejected": [],
+   "overrideMismatch": false
+  }
+ ]
+}

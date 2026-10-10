@@ -1,0 +1,16 @@
+[
+  { "char": "土", "totalStrokes": 3, "why": "look-alike test 土/士" },
+  { "char": "士", "totalStrokes": 3, "why": "look-alike test 土/士" },
+  { "char": "人", "totalStrokes": 2, "why": "look-alike test 人/入" },
+  { "char": "入", "totalStrokes": 2, "why": "look-alike test 人/入" },
+  { "char": "大", "totalStrokes": 3, "why": "look-alike test 大/太/犬" },
+  { "char": "太", "totalStrokes": 4, "why": "look-alike test 大/太/犬" },
+  { "char": "犬", "totalStrokes": 4, "why": "look-alike test 大/太/犬" },
+  { "char": "日", "totalStrokes": 4, "why": "look-alike test 日/目" },
+  { "char": "目", "totalStrokes": 5, "why": "look-alike test 日/目" },
+  { "char": "未", "totalStrokes": 5, "why": "look-alike test 未/末" },
+  { "char": "末", "totalStrokes": 5, "why": "look-alike test 未/末" },
+  { "char": "己", "totalStrokes": 3, "why": "look-alike test 己/已" },
+  { "char": "已", "totalStrokes": 3, "why": "look-alike test 己/已" },
+  { "char": "午", "totalStrokes": 4, "why": "look-alike test 午/牛" }
+]

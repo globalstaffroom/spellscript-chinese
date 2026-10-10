@@ -1,0 +1,3 @@
+Stroke data derived from AnimCJK (https://github.com/parsimonhi/animCJK) and hanzi-writer-data
+(https://github.com/chanind/hanzi-writer-data), both under the Arphic Public License.
+Hand-composed overrides in this folder are derived from the same data and carry the same licence.
