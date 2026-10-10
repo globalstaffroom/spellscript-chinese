@@ -41,3 +41,13 @@ test('rejects an op with nothing removed and no target box', () => {
   const base = char(line(0, 0, 10, 0));
   expect(() => compose(base, [{ op: { remove: [], insertAt: 0, donor: { char: 'x', strokes: 'all' } }, donor: base }])).toThrow(/targetBox/);
 });
+
+test('an insert lands before the kept base stroke at insertAt', () => {
+  const base = char(line(0, 0, 10, 0), line(0, 100, 10, 100), line(0, 200, 10, 200));
+  const donor = char(line(0, 0, 10, 0));
+  const out = compose(base, [{ op: { remove: [2], insertAt: 1, donor: { char: 'x', strokes: 'all' } }, donor }]);
+  expect(out.medians).toHaveLength(3);
+  expect(out.medians[0]).toEqual([[0, 0], [10, 0]]);
+  expect(out.medians[1]).toEqual([[0, 200], [10, 200]]);
+  expect(out.medians[2]).toEqual([[0, 100], [10, 100]]);
+});
