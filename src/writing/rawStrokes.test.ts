@@ -24,3 +24,14 @@ test('move or end without begin is ignored', () => {
   q.move(p(1, 1)); q.end();
   expect(q.take()).toBeNull();
 });
+
+test('a second start while a stroke is open closes it and starts nothing, as Hanzi Writer does', () => {
+  const q = new RawStrokeQueue();
+  q.begin('pen', p(0, 0)); q.move(p(1, 10));
+  q.begin('pen', p(2, 20));                                    // closes the first stroke, starts nothing
+  q.move(p(3, 30));                                            // ignored: no stroke is open
+  q.end();                                                     // no-op
+  expect(q.pending).toBe(1);
+  expect(q.take()).toEqual({ input: 'pen', points: [p(0, 0), p(1, 10)] });
+  expect(q.take()).toBeNull();
+});
