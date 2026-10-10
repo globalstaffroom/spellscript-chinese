@@ -36,12 +36,14 @@ export function Calibration() {
       const { store, reason } = await openStoreOrMemory();
       const persist = await requestPersistence();
       setStore(store);
-      setWarning(reason ?? (persist === 'denied' ? 'The browser may clear this data later (storage persistence was refused).' : null));
+      setWarning(reason ?? (persist === 'denied' ? 'The browser may clear this data later (storage persistence was refused).'
+        : persist === 'unsupported' ? 'This browser cannot promise to keep this data (no persistent storage).' : null));
       setProfiles(await store.listProfiles());
     })();
   }, []);
 
   if (!store) return <p>Loading…</p>;
+  const choose = (p: Profile) => { setProfile(p); setLastInput(p.lastInput); };
   const steps = mode === 'adult' ? adultSteps() : childSteps();
 
   if (!profile) {
@@ -49,12 +51,12 @@ export function Calibration() {
       <section>
         <h2>Calibration: who is writing?</h2>
         {warning && <p role="alert">{warning}</p>}
-        {profiles.map(p => <button key={p.id} onClick={() => setProfile(p)} style={{ fontSize: 24, margin: 4 }}>{p.avatar} {p.nickname}</button>)}
+        {profiles.map(p => <button key={p.id} onClick={() => choose(p)} style={{ fontSize: 24, margin: 4 }}>{p.avatar} {p.nickname}</button>)}
         <p>New profile:</p>
         {NICKNAMES.map((n, k) => (
           <button key={n} style={{ margin: 4 }} onClick={async () => {
             const p: Profile = { id: newId(), nickname: n, avatar: AVATARS[k]!, curriculumId: 'kangxuan-g2-1', lesson: 1, tier: 'practice', lastInput: 'finger', createdAt: Date.now() };
-            await store.putProfile(p); setProfiles([...profiles, p]); setProfile(p);
+            await store.putProfile(p); setProfiles([...profiles, p]); choose(p);
             const w = store.warning(); if (w) setWarning(w);
           }}>{AVATARS[k]} {n}</button>
         ))}
@@ -80,8 +82,10 @@ export function Calibration() {
       <section>
         <h2>Done</h2>
         {warning && <p role="alert">{warning}</p>}
-        <table><thead><tr><th>Tier</th><th>Attempts</th><th>Passed</th><th>First try</th><th>Correct strokes rejected</th></tr></thead>
+        <table><thead><tr><th>Tier</th><th>Attempts</th><th>Passed</th><th>First try</th><th>Strokes rejected</th></tr></thead>
           <tbody>{TIER_ORDER.map(t => { const f = sum.byTier[t]; return <tr key={t}><td>{TIERS[t].labelZh}</td><td>{f.attempts}</td><td>{f.passed}</td><td>{f.passedFirstTry}</td><td>{f.strokesRejected} of {f.strokesEvaluated} ({pct(f.rejectionRate)})</td></tr>; })}</tbody></table>
+        <p>Includes strokes the child genuinely wrote wrong; compare tiers on the same child, not against an absolute target.</p>
+        <p>Left unfinished (skipped after writing): {sum.abandoned}</p>
         {sum.lookalikes.length > 0 && <p>Look-alikes wrongly accepted: {sum.lookalikes.filter(l => l.falseAccept).map(l => `${l.written} for ${l.asked} (${TIERS[l.tier].labelZh})`).join(', ') || 'none'}</p>}
         <button onClick={() => setExported(downloadJson(`calibration-${profile.nickname}-${mode}.json`, { profile: { nickname: profile.nickname }, summary: sum, attempts: results }))}>Export results</button>
         {exported && <textarea readOnly value={exported} rows={6} style={{ width: '100%' }} />}
@@ -91,7 +95,7 @@ export function Calibration() {
 
   const step = steps[i]!;
   return (
-    <section>
+    <section data-testid="calibration-running" style={{ touchAction: 'none' }}>
       {warning && <p role="alert">{warning}</p>}
       <p>{i + 1} / {steps.length} · {TIERS[step.tier].labelZh} · input: {lastInput}</p>
       {step.context === 'calibration'
@@ -105,7 +109,15 @@ export function Calibration() {
         onFinish={async r => {
           await store.addAttempt(r);
           const w = store.warning(); if (w) setWarning(w);
-          if (r.result !== 'abandoned') { setResults(x => [...x, r]); clearTimer(); timer.current = setTimeout(advance, 600); }
+          // Abandoned attempts (Skip after writing, which unmounts the pad) belong in the summary and the export too.
+          setResults(x => [...x, r]);
+          const seen = r.inputs.at(-1);
+          if (seen) {
+            const updated = { ...profile, lastInput: seen };
+            await store.putProfile(updated);
+            setProfile(updated); setProfiles(ps => ps.map(x => (x.id === updated.id ? updated : x)));
+          }
+          if (r.result !== 'abandoned') { clearTimer(); timer.current = setTimeout(advance, 600); }
         }}
       />
       <p><button onClick={advance}>Skip</button></p>
