@@ -4,7 +4,7 @@ import { loadStrokeJson } from '../content/strokeFiles';
 import type { StrokeJson } from '../content/types';
 import { newId } from '../storage/profiles';
 import { finishAttempt, isOverMistakeLimit, recordStroke, startAttempt, type AttemptContext, type AttemptRecord, type AttemptState } from './attempt';
-import { PalmFilter, classifyPointer, classifyTouch, touchKinds } from './input';
+import { PalmFilter, classifyPointer } from './input';
 import { RawStrokeQueue } from './rawStrokes';
 import { quizOptionsFor, showOutlineFor, type InputKind, type TierId } from './tiers';
 
@@ -50,49 +50,92 @@ export function WritingPad(p: Props) {
       return { x: x - r.left, y: y - r.top, t: Math.round(performance.now() - t0) };
     };
 
-    // Capture-phase listeners on the host run before Hanzi Writer's listeners on its inner node (start, move), and the
-    // window capture listener runs before its document listener (end). Blocking here keeps palms out of its strokes.
+    // Hanzi Writer never receives native touch events: it reads touches[0] and ends a stroke on ANY document touchend,
+    // so a resting palm would hijack it. The pad picks one touch (the Pencil wins) and drives Hanzi Writer with
+    // synthetic mouse events. Its own document listeners cannot be removed (no API), so we stop events before them.
+    const hwEl = el.querySelector<HTMLDivElement>('[data-hw]')!;
+    type Touch1 = { identifier: number; clientX: number; clientY: number; touchType?: string };
+    let active: { id: number; kind: 'pen' | 'finger' } | null = null;
+    const padTouchIds = new Set<number>();
+    const synthetic = new WeakSet<Event>();
+    let lastTouch = -Infinity; // Safari fires compatibility mouse events after a touch
+    const fire = (type: string, target: EventTarget, x: number, y: number) => {
+      const ev = new MouseEvent(type, { bubbles: true, cancelable: true, clientX: x, clientY: y });
+      synthetic.add(ev);
+      target.dispatchEvent(ev);
+    };
+    const hwTarget = () => hwEl.querySelector('svg') ?? hwEl;
+    const stopActive = () => {
+      if (!active) return;
+      queue.end();
+      fire('mouseup', document, 0, 0);
+      active = null;
+    };
+    const touches = (l: TouchList | ArrayLike<unknown>) => Array.from(l as ArrayLike<Touch1>);
     const onTouchStart = (e: TouchEvent) => {
+      e.preventDefault(); e.stopPropagation();
       lastTouch = performance.now();
-      const kinds = touchKinds(e.touches);
-      if (kinds[0] === 'stylus') palm.notePen(performance.now());
-      if (palm.shouldBlock({ primary: kinds[0], now: performance.now() })) { e.stopPropagation(); e.preventDefault(); return; }
-      const kind = classifyTouch(kinds) ?? 'finger';
-      latest.current.onInputSeen(kind);
-      const t = e.touches[0]!;
-      queue.begin(kind, local(t.clientX, t.clientY));
+      for (const t of touches(e.changedTouches)) {
+        padTouchIds.add(t.identifier);
+        const kind = t.touchType === 'stylus' ? 'pen' : 'finger';
+        if (kind === 'pen') palm.notePen(performance.now());
+        if (active && !(active.kind === 'finger' && kind === 'pen')) continue;
+        if (!active && kind === 'finger' && palm.shouldBlock({ primary: 'direct', now: performance.now() })) continue;
+        if (active) stopActive(); // a palm that landed first loses to the Pencil
+        active = { id: t.identifier, kind };
+        latest.current.onInputSeen(kind);
+        queue.begin(kind, local(t.clientX, t.clientY));
+        fire('mousedown', hwTarget(), t.clientX, t.clientY);
+      }
     };
     const onTouchMove = (e: TouchEvent) => {
-      const kinds = touchKinds(e.touches);
-      if (kinds[0] === 'stylus') palm.notePen(performance.now());
-      if (palm.shouldBlock({ primary: kinds[0], now: performance.now() })) { e.stopPropagation(); e.preventDefault(); return; }
-      const t = e.touches[0];
-      if (t) queue.move(local(t.clientX, t.clientY));
+      e.preventDefault(); e.stopPropagation();
+      if (!active) return;
+      const t = touches(e.changedTouches).find(c => c.identifier === active!.id);
+      if (!t) return;
+      if (t.touchType === 'stylus') palm.notePen(performance.now());
+      queue.move(local(t.clientX, t.clientY));
+      fire('mousemove', hwTarget(), t.clientX, t.clientY);
     };
     const onTouchEnd = (e: TouchEvent) => {
       lastTouch = performance.now();
-      const kinds = touchKinds(e.changedTouches);
-      if (palm.shouldBlock({ primary: kinds[0], now: performance.now() })) { e.stopPropagation(); return; }
-      if (kinds[0] === 'stylus') palm.notePen(performance.now());
-      queue.end();
+      let ours = false;
+      for (const t of touches(e.changedTouches)) {
+        if (!padTouchIds.delete(t.identifier)) continue; // never started on the pad: leave it alone
+        ours = true;
+        if (active && active.id === t.identifier) {
+          if (t.touchType === 'stylus') palm.notePen(performance.now());
+          stopActive();
+        }
+      }
+      if (ours) e.stopPropagation();
     };
-    // Safari fires compatibility mouse events after a touch; recording them would add a phantom stroke to the queue.
-    let lastTouch = -Infinity;
+    const compat = (e: MouseEvent) => !synthetic.has(e) && performance.now() - lastTouch < 800;
     let mouseDown = false;
     const onMouseDown = (e: MouseEvent) => {
-      if (performance.now() - lastTouch < 800) return;
+      if (synthetic.has(e)) return;
+      if (compat(e)) { e.stopPropagation(); e.preventDefault(); return; }
       mouseDown = true;
       latest.current.onInputSeen('mouse');
       queue.begin('mouse', local(e.clientX, e.clientY));
     };
-    const onMouseMove = (e: MouseEvent) => { if (mouseDown) queue.move(local(e.clientX, e.clientY)); };
-    const onMouseUp = () => { if (mouseDown) { mouseDown = false; queue.end(); } };
+    const onMouseMove = (e: MouseEvent) => {
+      if (synthetic.has(e)) return;
+      if (compat(e)) { e.stopPropagation(); return; }
+      if (mouseDown) queue.move(local(e.clientX, e.clientY));
+    };
+    const onMouseUp = (e: MouseEvent) => {
+      if (synthetic.has(e)) return;
+      if (compat(e)) { e.stopPropagation(); return; }
+      if (mouseDown) { mouseDown = false; queue.end(); }
+    };
     const onPointerDown = (e: PointerEvent) => { if (classifyPointer(e.pointerType) === 'pen') palm.notePen(performance.now()); };
 
     el.addEventListener('pointerdown', onPointerDown, true);
     el.addEventListener('touchstart', onTouchStart, { capture: true, passive: false });
     el.addEventListener('touchmove', onTouchMove, { capture: true, passive: false });
     window.addEventListener('touchend', onTouchEnd, true);
+    window.addEventListener('touchcancel', onTouchEnd, true);
     el.addEventListener('mousedown', onMouseDown, true);
     el.addEventListener('mousemove', onMouseMove, true);
     window.addEventListener('mouseup', onMouseUp, true);
@@ -109,23 +152,23 @@ export function WritingPad(p: Props) {
     const loader = p.loader ?? loadStrokeJson;
     // Start the load here (not only inside Hanzi Writer) so a missing file always shows the message; Hanzi Writer reuses this promise.
     let disposed = false;
-    const first = loader(p.char);
+    const first = Promise.resolve().then(() => loader(p.char));
     first.catch(() => { if (!disposed) setError(`找不到「${p.char}」的筆順資料`); });
-    const hwEl = el.querySelector<HTMLDivElement>('[data-hw]')!;
     const writer = HanziWriter.create(hwEl, p.char, {
       width: p.size, height: p.size, padding: Math.round(p.size * 0.06),
       showOutline: showOutlineFor(p.tier), showCharacter: false, renderer: 'svg',
       outlineColor: '#DDD', drawingColor: '#222', drawingWidth: Math.max(8, Math.round(p.size / 30)),
+      onLoadCharDataError: () => {},
       charDataLoader: (c: string, onLoad: (d: StrokeJson) => void, onError: (e?: unknown) => void) => {
         (c === p.char ? first : loader(c)).then(onLoad, err => { onError(err); });
       },
     });
-    void writer.quiz({
+    writer.quiz({
       ...quizOptionsFor(p.tier, p.leniencyInput),
       onCorrectStroke: onStroke(true),
       onMistake: onStroke(false),
       onComplete: () => finish('passed'),
-    });
+    }).catch(() => {});
 
     return () => {
       disposed = true;
@@ -133,6 +176,7 @@ export function WritingPad(p: Props) {
       el.removeEventListener('touchstart', onTouchStart, true);
       el.removeEventListener('touchmove', onTouchMove, true);
       window.removeEventListener('touchend', onTouchEnd, true);
+      window.removeEventListener('touchcancel', onTouchEnd, true);
       el.removeEventListener('mousedown', onMouseDown, true);
       el.removeEventListener('mousemove', onMouseMove, true);
       window.removeEventListener('mouseup', onMouseUp, true);
