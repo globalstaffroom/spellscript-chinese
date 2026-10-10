@@ -58,18 +58,22 @@ function ReviewCard({ char, source, expected, checked, onToggle }: { char: strin
   const [data, setData] = useState<StrokeJson | null>(null);
   const [missing, setMissing] = useState(false);
   useEffect(() => {
+    let cancelled = false;
+    const el = box.current;
     loadStrokeJson(char).then(d => {
+      if (cancelled) return;
       setData(d);
-      writer.current = HanziWriter.create(box.current!, char, { width: 160, height: 160, padding: 8, showOutline: true, showCharacter: false, charDataLoader: (_c: string, ok: (x: StrokeJson) => void) => ok(d) });
-    }, () => setMissing(true));
+      writer.current = HanziWriter.create(el!, char, { width: 160, height: 160, padding: 8, showOutline: true, showCharacter: false, charDataLoader: (_c: string, ok: (x: StrokeJson) => void) => ok(d) });
+    }, () => { if (!cancelled) setMissing(true); });
+    return () => { cancelled = true; writer.current = null; el?.replaceChildren(); };
   }, [char]);
   return (
     <figure style={{ border: '1px solid #ccc', padding: 8, margin: 0, width: 340 }}>
       <figcaption style={{ fontSize: 28 }}>{char} <small style={{ fontSize: 12 }}>{expected} strokes · {source ?? 'NO DATA'}</small></figcaption>
       {missing ? <p role="alert">No stroke data</p> : (
         <div style={{ display: 'flex', gap: 8 }}>
-          <div ref={box} onClick={() => writer.current?.animateCharacter()} style={{ cursor: 'pointer' }} title="Tap to play" />
-          {data && <StrokeDiagram data={data} size={160} />}
+          <div ref={box} onClick={() => writer.current?.animateCharacter()} style={{ cursor: 'pointer', flexShrink: 0, width: 160, height: 160 }} title="Tap to play" />
+          {data && <div style={{ flexShrink: 0 }}><StrokeDiagram data={data} size={160} /></div>}
         </div>
       )}
       <label><input type="checkbox" checked={checked} disabled={missing} onChange={e => onToggle(e.target.checked)} /> matches MOE 筆順</label>

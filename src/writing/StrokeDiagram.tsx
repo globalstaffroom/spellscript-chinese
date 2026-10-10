@@ -9,7 +9,7 @@ export function StrokeDiagram({ data, size }: { data: StrokeJson; size: number }
       </g>
       {data.medians.map((m, i) => {
         const [x, y] = m[0]!;
-        return <text key={i} x={x} y={900 - y!} fontSize="64" fontWeight="700" fill="#000" stroke="#fff" strokeWidth="10" paintOrder="stroke">{i + 1}</text>;
+        return <text key={i} x={x} y={900 - y!} fontSize="110" fontWeight="700" fill="#000" stroke="#fff" strokeWidth="16" paintOrder="stroke">{i + 1}</text>;
       })}
     </svg>
   );
