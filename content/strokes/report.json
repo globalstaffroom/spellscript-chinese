@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-10T06:33:28.861Z",
+ "generatedAt": "2026-10-10T07:21:11.069Z",
  "chars": [
   {
    "char": "年",
@@ -1341,13 +1341,8 @@
   {
    "char": "慌",
    "expected": 13,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 12
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -1507,13 +1502,8 @@
   {
    "char": "敬",
    "expected": 13,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 12
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -1575,25 +1565,15 @@
   {
    "char": "滑",
    "expected": 13,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 12
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
    "char": "遨",
    "expected": 15,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 13
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -1606,13 +1586,8 @@
   {
    "char": "陀",
    "expected": 8,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 7
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -1758,37 +1733,22 @@
   {
    "char": "邀",
    "expected": 17,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 16
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
    "char": "與",
    "expected": 14,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 13
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
    "char": "遙",
    "expected": 14,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 13
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -2032,25 +1992,15 @@
   {
    "char": "蓓",
    "expected": 14,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 13
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
    "char": "蕾",
    "expected": 17,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 16
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -2196,13 +2146,8 @@
   {
    "char": "薄",
    "expected": 17,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 16
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -2278,13 +2223,8 @@
   {
    "char": "郁",
    "expected": 9,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 8
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -2346,13 +2286,8 @@
   {
    "char": "阻",
    "expected": 8,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 7
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -2393,13 +2328,8 @@
   {
    "char": "塔",
    "expected": 13,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 12
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -2461,13 +2391,8 @@
   {
    "char": "逛",
    "expected": 11,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 10
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -2578,13 +2503,8 @@
   {
    "char": "芝",
    "expected": 8,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 6
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -2597,13 +2517,8 @@
   {
    "char": "邁",
    "expected": 17,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 16
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -2623,13 +2538,8 @@
   {
    "char": "搓",
    "expected": 13,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 12
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -2801,13 +2711,8 @@
   {
    "char": "謎",
    "expected": 17,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 16
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {
@@ -2834,7 +2739,7 @@
   {
    "char": "鎚",
    "expected": 18,
-   "source": null,
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },

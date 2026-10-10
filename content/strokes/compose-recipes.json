@@ -2,7 +2,737 @@
   {
     "char": "茄",
     "baseChar": "茄",
-    "ops": [{ "remove": [0, 1, 2], "insertAt": 0, "donor": { "char": "花", "strokes": [0, 1, 2, 3] } }],
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "花",
+          "strokes": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    ],
     "note": "Mainland 艹 is 3 strokes; Taiwan 艹 is 4 (from AnimCJK 花, MOE 8 strokes)."
+  },
+  {
+    "char": "蓓",
+    "baseChar": "蓓",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "花",
+          "strokes": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 蓓 (13). Mainland 3-stroke 艹 replaced by Taiwan 4-stroke 艹 from AnimCJK 花 0-3, written first. 倍 part unchanged."
+  },
+  {
+    "char": "蕾",
+    "baseChar": "蕾",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "花",
+          "strokes": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 蕾 (16). Mainland 3-stroke 艹 replaced by Taiwan 4-stroke 艹 from AnimCJK 花 0-3, written first. 雷 part unchanged."
+  },
+  {
+    "char": "薄",
+    "baseChar": "薄",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "花",
+          "strokes": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 薄 (16). Mainland 3-stroke 艹 replaced by Taiwan 4-stroke 艹 from AnimCJK 花 0-3, written first. 溥 part unchanged."
+  },
+  {
+    "char": "芝",
+    "baseChar": "芝",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "花",
+          "strokes": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "remove": [
+          4
+        ],
+        "insertAt": 4,
+        "donor": {
+          "char": "一",
+          "strokes": "all"
+        },
+        "targetBox": {
+          "minX": 236,
+          "minY": 372,
+          "maxX": 610,
+          "maxY": 422
+        }
+      },
+      {
+        "remove": [],
+        "insertAt": 4,
+        "donor": {
+          "char": "丿",
+          "strokes": "all"
+        },
+        "targetBox": {
+          "minX": 290,
+          "minY": 171,
+          "maxX": 640,
+          "maxY": 420
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 芝 (6). Two differences: Taiwan 艹 is 4 strokes (AnimCJK 花 0-3), and Taiwan 之 is 4 strokes (丶 一 丿 ㇏, per the 康軒 4上 card) where mainland writes 丶 ㇇ ㇏. The mainland 橫撇 (stroke 4) is replaced by AnimCJK 一 and 丿 placed with explicit boxes. No AnimCJK zhHant character contains a Taiwan 之, so these two strokes are hand-placed: founder check."
+  },
+  {
+    "char": "慌",
+    "baseChar": "慌",
+    "ops": [
+      {
+        "remove": [
+          1
+        ],
+        "insertAt": 3,
+        "donor": {
+          "char": "慌",
+          "strokes": [
+            1
+          ]
+        }
+      },
+      {
+        "remove": [
+          3,
+          4,
+          5
+        ],
+        "insertAt": 3,
+        "donor": {
+          "char": "花",
+          "strokes": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 慌 (12). Two differences: Taiwan 忄 order is left dot, vertical, right dot (康軒 2上 card) where the base has dot, dot, vertical, so the base's own right dot (stroke 1) is moved after the vertical; then Taiwan 4-stroke 艹 (AnimCJK 花 0-3) where the mainland 艹 was, then 亡 and 川."
+  },
+  {
+    "char": "敬",
+    "baseChar": "敬",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "花",
+          "strokes": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 敬 (12). Taiwan 4-stroke 艹 (AnimCJK 花 0-3) first, then 句, then 攵."
+  },
+  {
+    "char": "塔",
+    "baseChar": "塔",
+    "ops": [
+      {
+        "remove": [
+          3,
+          4,
+          5
+        ],
+        "insertAt": 3,
+        "donor": {
+          "char": "花",
+          "strokes": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 塔 (12). 土 first (3), then Taiwan 4-stroke 艹 (AnimCJK 花 0-3), then 合."
+  },
+  {
+    "char": "遨",
+    "baseChar": "遨",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "在",
+          "strokes": [
+            3,
+            4,
+            5
+          ]
+        },
+        "targetBox": {
+          "minX": 350,
+          "minY": 570,
+          "maxX": 610,
+          "maxY": 810
+        }
+      },
+      {
+        "remove": [],
+        "insertAt": 0,
+        "donor": {
+          "char": "放",
+          "strokes": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "targetBox": {
+          "minX": 326,
+          "minY": 193,
+          "maxX": 600,
+          "maxY": 540
+        }
+      },
+      {
+        "remove": [
+          10,
+          11,
+          12
+        ],
+        "insertAt": 10,
+        "donor": {
+          "char": "近",
+          "strokes": [
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 遨 (13). Two differences: Taiwan 敖 is 11 strokes with 土 over 方 on the left (康軒 4上 card: 土 1-3, 方 4-7, 攵 8-11), where mainland writes a 6-stroke 龶+万 form; built from AnimCJK 土 and 方 in explicit boxes. Taiwan 辶 is 4 strokes, written last (AnimCJK 近 4-7)."
+  },
+  {
+    "char": "邀",
+    "baseChar": "邀",
+    "ops": [
+      {
+        "remove": [
+          13,
+          14,
+          15
+        ],
+        "insertAt": 13,
+        "donor": {
+          "char": "近",
+          "strokes": [
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 邀 (16). 敫 (13) unchanged; mainland 3-stroke 辶 replaced by Taiwan 4-stroke 辶 (AnimCJK 近 4-7), written last."
+  },
+  {
+    "char": "遙",
+    "baseChar": "遙",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "將",
+          "strokes": [
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "remove": [
+          10,
+          11,
+          12
+        ],
+        "insertAt": 10,
+        "donor": {
+          "char": "近",
+          "strokes": [
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 遙 (13). Two differences: the top of 䍃 is a different form and order in Taiwan (康軒 4上 card: 丿, 橫撇, 丶, 提) where the base has 丿 丶 丶 橫撇; replaced by AnimCJK 將 strokes 4-7, which are that Taiwan form. 缶 (6) unchanged. Mainland 3-stroke 辶 replaced by Taiwan 4-stroke 辶 (AnimCJK 近 4-7), written last."
+  },
+  {
+    "char": "逛",
+    "baseChar": "逛",
+    "ops": [
+      {
+        "remove": [
+          7,
+          8,
+          9
+        ],
+        "insertAt": 7,
+        "donor": {
+          "char": "近",
+          "strokes": [
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 逛 (10). 狂 (7) unchanged; Taiwan 4-stroke 辶 (AnimCJK 近 4-7), written last."
+  },
+  {
+    "char": "邁",
+    "baseChar": "邁",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "花",
+          "strokes": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "remove": [
+          13,
+          14,
+          15
+        ],
+        "insertAt": 13,
+        "donor": {
+          "char": "近",
+          "strokes": [
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 邁 (16). Its 艹 is already 4 strokes but in the order 丨一丿一; the 康軒 card and AnimCJK 萬 write 丨一一丿, so it is replaced by AnimCJK 花 0-3. Mainland 3-stroke 辶 replaced by Taiwan 4-stroke 辶 (AnimCJK 近 4-7), written last."
+  },
+  {
+    "char": "謎",
+    "baseChar": "謎",
+    "ops": [
+      {
+        "remove": [
+          13,
+          14,
+          15
+        ],
+        "insertAt": 13,
+        "donor": {
+          "char": "近",
+          "strokes": [
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 謎 (16). 言 then 米 unchanged; Taiwan 4-stroke 辶 (AnimCJK 近 4-7), written last."
+  },
+  {
+    "char": "陀",
+    "baseChar": "陀",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "防",
+          "strokes": [
+            0,
+            1,
+            2
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 陀 (7). Mainland 2-stroke left 阝 replaced by Taiwan 3-stroke 阝 (AnimCJK 防 0-2), written first; 它 unchanged."
+  },
+  {
+    "char": "阻",
+    "baseChar": "阻",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "防",
+          "strokes": [
+            0,
+            1,
+            2
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 阻 (7). Mainland 2-stroke left 阝 replaced by Taiwan 3-stroke 阝 (AnimCJK 防 0-2), written first; 且 unchanged."
+  },
+  {
+    "char": "郁",
+    "baseChar": "郁",
+    "ops": [
+      {
+        "remove": [
+          6,
+          7
+        ],
+        "insertAt": 6,
+        "donor": {
+          "char": "部",
+          "strokes": [
+            8,
+            9,
+            10
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 郁 (8). 有 unchanged; mainland 2-stroke right 阝 replaced by Taiwan 3-stroke 阝 (AnimCJK 部 8-10), written last. 有 order (一 before 丿) matches the 康軒 4上 card."
+  },
+  {
+    "char": "滑",
+    "baseChar": "滑",
+    "ops": [
+      {
+        "remove": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "insertAt": 3,
+        "donor": {
+          "char": "體",
+          "strokes": [
+            0,
+            1
+          ]
+        },
+        "targetBox": {
+          "minX": 432,
+          "minY": 533,
+          "maxX": 811,
+          "maxY": 818
+        }
+      },
+      {
+        "remove": [],
+        "insertAt": 3,
+        "donor": {
+          "char": "一",
+          "strokes": "all"
+        },
+        "targetBox": {
+          "minX": 620,
+          "minY": 686,
+          "maxX": 750,
+          "maxY": 712
+        }
+      },
+      {
+        "remove": [],
+        "insertAt": 3,
+        "donor": {
+          "char": "體",
+          "strokes": [
+            2
+          ]
+        },
+        "targetBox": {
+          "minX": 586,
+          "minY": 556,
+          "maxX": 624,
+          "maxY": 708
+        }
+      },
+      {
+        "remove": [],
+        "insertAt": 3,
+        "donor": {
+          "char": "體",
+          "strokes": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "targetBox": {
+          "minX": 327,
+          "minY": -1,
+          "maxX": 871,
+          "maxY": 570
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 滑 (12). 氵 unchanged; mainland 9-stroke 骨 replaced by Taiwan 10-stroke 骨 from AnimCJK 體 0-9 (AnimCJK has no 骨), placed part by part with boxes computed from the whole-part mapping. The inner top part is ┌ in Taiwan: the 康軒 4上 card writes the short 一 first (stroke 6, left to right) and then the short 丨 (stroke 7). AnimCJK 體 writes the 丨 first and draws its 一 right to left, so the 一 here is AnimCJK 一 placed in that stroke's box and put before the 丨. Founder check: the inner order disagrees with AnimCJK."
+  },
+  {
+    "char": "搓",
+    "baseChar": "搓",
+    "ops": [
+      {
+        "remove": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "insertAt": 3,
+        "donor": {
+          "char": "差",
+          "strokes": "all"
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 搓 (12). 扌 unchanged; mainland 9-stroke 差 replaced by Taiwan 10-stroke 差 (AnimCJK 差, all strokes)."
+  },
+  {
+    "char": "與",
+    "baseChar": "與",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "舉",
+          "strokes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      }
+    ],
+    "note": "Base hanzi-writer-data 與 (13); its bottom 一 丿 ㇏ kept. What differs: the middle part is 4 strokes in Taiwan (mainland 3), and Taiwan writes it FIRST, before the left and right halves of 臼 (mainland writes left half, middle, right half). The top 11 strokes come from AnimCJK 舉 0-10 (middle 4, left 4, right 3), matching the 康軒 4上 card order. Founder check."
+  },
+  {
+    "char": "鎚",
+    "baseChar": "鎖",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "鎖",
+          "strokes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        "targetBox": {
+          "minX": 70,
+          "minY": 108,
+          "maxX": 390,
+          "maxY": 794
+        }
+      },
+      {
+        "remove": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "insertAt": 8,
+        "donor": {
+          "char": "追",
+          "strokes": "all"
+        },
+        "targetBox": {
+          "minX": 420,
+          "minY": -40,
+          "maxX": 950,
+          "maxY": 810
+        }
+      }
+    ],
+    "note": "No source has 鎚. Base hanzi-writer-data 鎖 (18): its 金 (strokes 0-7, order matches the 康軒 4上 card) is narrowed with an explicit box, and the right part is replaced by AnimCJK 追 (10, Taiwan 4-stroke 辶) in a wider box so the 辶 has room."
   }
 ]
