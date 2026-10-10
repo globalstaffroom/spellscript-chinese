@@ -87,7 +87,7 @@ implementation plan.
 - `words`: the word, the per-character reading in context (handles 多音字), English meaning, optional recorded
   audio file.
 - `curricula/kangxuan-g2`, `curricula/kangxuan-g4`: lesson → 生字 to write, and the words containing them.
-  Transcribed from the founder's photos of the 生字 pages. Structured so another publisher (南一, 翰林) can be added
+  Transcribed from page images of the founder's 康軒 textbook PDFs (the PDFs' text layer mis-encodes characters). Structured so another publisher (南一, 翰林) can be added
   later.
 - `story/level-NN`: the scenes, every line in Chinese and English, trials, speaker, and canonical tribulation number
   and chapter. Fear-sensitive lines are tagged `threat-to-pilgrims` or `harm-to-bystanders` (§9).
@@ -130,7 +130,10 @@ a mistake.
   rest of that session. The tier itself changes only when the parent confirms. The exact numbers are tuned after
   calibration.
 - **Input:** finger mode adds a fixed tolerance allowance on top of the tier. While an Apple Pencil is in use
-  (`pointerType: pen`), touch input is ignored, which rejects resting palms.
+  (`pointerType: pen`), touch input is ignored, which rejects resting palms. Input type is detected on every stroke,
+  because the children switch between finger and Pencil from one session to the next. That iPadOS Safari reports the
+  Pencil as `pen` is proven on the device first; if it does not, the fallback is a finger/pen toggle on the trial
+  screen.
 - **Feedback** names the stroke ("第3筆是撇，從右上開始"). The child's attempt stays visible next to the correct
   form.
 - **Calibration (a v1 milestone, before the tiers are trusted):** each child writes about 15 characters they know well,
@@ -231,7 +234,8 @@ writing grid and for display, and a TC sans font for the UI. The font licences a
 
 ## 11. Open items (needed during implementation, not blockers for the plan)
 
-- Photos of the 生字 pages for both 康軒 grades. Wanted for the whole year; the current lessons first.
+- Which lesson (第幾課) each child is on now. The first-semester 生字 lists (2上, 4上) are already transcribed in
+  `content/curricula/`; second-semester books are still needed.
 - The partner's agreement that the prototype art will be **publicly** visible in the repository.
 - Whether lesson-by-lesson 康軒 生字 lists may be published. Must be checked before any wider public launch.
 - The licence for the code (e.g. MIT). Stroke data stays under the Arphic Public License, and fonts under their own
