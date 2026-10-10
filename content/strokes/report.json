@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-10T06:28:19.403Z",
+ "generatedAt": "2026-10-10T06:33:28.861Z",
  "chars": [
   {
    "char": "年",
@@ -165,13 +165,8 @@
   {
    "char": "茄",
    "expected": 9,
-   "source": null,
-   "rejected": [
-    {
-     "source": "hanzi-writer-data",
-     "count": 8
-    }
-   ],
+   "source": "override",
+   "rejected": [],
    "overrideMismatch": false
   },
   {

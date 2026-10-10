@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "char": "茄",
+    "baseChar": "茄",
+    "ops": [{ "remove": [0, 1, 2], "insertAt": 0, "donor": { "char": "花", "strokes": [0, 1, 2, 3] } }],
+    "note": "Mainland 艹 is 3 strokes; Taiwan 艹 is 4 (from AnimCJK 花, MOE 8 strokes)."
+  }
+]
