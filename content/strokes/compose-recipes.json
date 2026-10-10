@@ -733,6 +733,6 @@
         }
       }
     ],
-    "note": "No source has 鎚. Base hanzi-writer-data 鎖 (18): its 金 (strokes 0-7, order matches the 康軒 4上 card) is narrowed with an explicit box, and the right part is replaced by AnimCJK 追 (10, Taiwan 4-stroke 辶) in a wider box so the 辶 has room."
+    "note": "No source has 鎚. Base hanzi-writer-data 鎖 (18): its 金 (strokes 0-7, order matches the 康軒 4上 card) is narrowed with an explicit box, and the right part is replaced by AnimCJK 追 (10, Taiwan 4-stroke 辶) in a wider box so the 辶 has room. Founder check: the least natural junction of the set (narrowed 金 against widened 追); confirm on #/review that it reads as 鎚."
   }
 ]

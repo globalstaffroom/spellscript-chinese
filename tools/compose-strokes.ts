@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { compose, type Recipe } from '../src/content/compose';
 import type { StrokeJson } from '../src/content/types';
 import { contentPath, hanziWriterData, loadZhHant, readJson } from './lib/sources';
@@ -13,6 +13,13 @@ const lookup = (char: string): StrokeJson => {
 
 const recipes = readJson<Recipe[]>(contentPath('strokes/compose-recipes.json'));
 mkdirSync(contentPath('strokes/overrides'), { recursive: true });
+// An override whose recipe was removed must not linger: build-strokes would keep using it.
+const wanted = new Set(recipes.map(r => `${r.char}.json`));
+for (const f of readdirSync(contentPath('strokes/overrides'))) {
+  if (f === '.gitkeep' || wanted.has(f)) continue;
+  rmSync(contentPath('strokes/overrides', f));
+  console.log(`deleted stale override ${f} (no recipe)`);
+}
 for (const r of recipes) {
   const out = compose(r.baseChar ? lookup(r.baseChar) : null, r.ops.map(op => ({ op, donor: lookup(op.donor.char) })));
   writeFileSync(contentPath('strokes/overrides', `${r.char}.json`), JSON.stringify(out) + '\n');
