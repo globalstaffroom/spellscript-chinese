@@ -56,6 +56,8 @@ export function WritingPad(p: Props) {
     const hwEl = el.querySelector<HTMLDivElement>('[data-hw]')!;
     type Touch1 = { identifier: number; clientX: number; clientY: number; touchType?: string };
     let active: { id: number; kind: 'pen' | 'finger' } | null = null;
+    // Spec §5: once the Pencil has been seen in this attempt, every finger touch is a palm (no time-out inside an attempt).
+    let penSeenThisAttempt = false;
     const padTouchIds = new Set<number>();
     const synthetic = new WeakSet<Event>();
     let lastTouch = -Infinity; // Safari fires compatibility mouse events after a touch
@@ -78,7 +80,8 @@ export function WritingPad(p: Props) {
       for (const t of touches(e.changedTouches)) {
         padTouchIds.add(t.identifier);
         const kind = t.touchType === 'stylus' ? 'pen' : 'finger';
-        if (kind === 'pen') palm.notePen(performance.now());
+        if (kind === 'pen') { palm.notePen(performance.now()); penSeenThisAttempt = true; }
+        if (kind === 'finger' && penSeenThisAttempt) continue;
         if (active && !(active.kind === 'finger' && kind === 'pen')) continue;
         if (!active && kind === 'finger' && palm.shouldBlock({ primary: 'direct', now: performance.now() })) continue;
         if (active) stopActive(); // a palm that landed first loses to the Pencil
@@ -110,6 +113,9 @@ export function WritingPad(p: Props) {
       }
       if (ours) e.stopPropagation();
     };
+    // Hanzi Writer ends its stroke on ANY document touchend, even one that started off the pad (a palm lifting, an
+    // iOS touchcancel). Registered before HanziWriter.create, so on document this bubble listener runs before its own.
+    const onDocTouchEnd = (e: TouchEvent) => { if (active !== null) e.stopImmediatePropagation(); };
     const compat = (e: MouseEvent) => !synthetic.has(e) && performance.now() - lastTouch < 800;
     let mouseDown = false;
     const onMouseDown = (e: MouseEvent) => {
@@ -129,13 +135,17 @@ export function WritingPad(p: Props) {
       if (compat(e)) { e.stopPropagation(); return; }
       if (mouseDown) { mouseDown = false; queue.end(); }
     };
-    const onPointerDown = (e: PointerEvent) => { if (classifyPointer(e.pointerType) === 'pen') palm.notePen(performance.now()); };
+    const onPointerDown = (e: PointerEvent) => {
+      if (classifyPointer(e.pointerType) === 'pen') { palm.notePen(performance.now()); penSeenThisAttempt = true; }
+    };
 
     el.addEventListener('pointerdown', onPointerDown, true);
     el.addEventListener('touchstart', onTouchStart, { capture: true, passive: false });
     el.addEventListener('touchmove', onTouchMove, { capture: true, passive: false });
     window.addEventListener('touchend', onTouchEnd, true);
     window.addEventListener('touchcancel', onTouchEnd, true);
+    document.addEventListener('touchend', onDocTouchEnd);
+    document.addEventListener('touchcancel', onDocTouchEnd);
     el.addEventListener('mousedown', onMouseDown, true);
     el.addEventListener('mousemove', onMouseMove, true);
     window.addEventListener('mouseup', onMouseUp, true);
@@ -177,6 +187,8 @@ export function WritingPad(p: Props) {
       el.removeEventListener('touchmove', onTouchMove, true);
       window.removeEventListener('touchend', onTouchEnd, true);
       window.removeEventListener('touchcancel', onTouchEnd, true);
+      document.removeEventListener('touchend', onDocTouchEnd);
+      document.removeEventListener('touchcancel', onDocTouchEnd);
       el.removeEventListener('mousedown', onMouseDown, true);
       el.removeEventListener('mousemove', onMouseMove, true);
       window.removeEventListener('mouseup', onMouseUp, true);

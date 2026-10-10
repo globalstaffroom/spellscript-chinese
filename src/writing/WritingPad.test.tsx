@@ -148,16 +148,56 @@ test('a palm already down loses to the Pencil, which is drawn at its own positio
   expect(kinds.at(-1)).toBe('pen');
 });
 
-test('a finger that started outside the pad still reaches the page after the Pencil was used', async () => {
+test('while a Pencil stroke is active, an off-pad touchend or touchcancel never reaches Hanzi Writer (Critical 1)', async () => {
+  render(<WritingPad {...base} tier="practice" onFinish={() => {}} />);
+  await act(async () => {});
+  const pad = screen.getByTestId('writing-pad');
+  const outside = document.createElement('div'); document.body.appendChild(outside);
+  const reached = vi.fn(); const ups = vi.fn();
+  // Registered after the pad mounted, as Hanzi Writer's own document listener is.
+  document.addEventListener('touchend', reached); document.addEventListener('touchcancel', reached);
+  document.addEventListener('mouseup', ups);
+  pad.dispatchEvent(ev('touchstart', [PEN]));
+  outside.dispatchEvent(ev('touchend', [{ id: 9, type: 'direct' }], [PEN])); // a palm mostly off the pad lifts
+  outside.dispatchEvent(ev('touchcancel', [{ id: 8, type: 'direct' }], [PEN]));
+  document.dispatchEvent(ev('touchend', [{ id: 7, type: 'direct' }], [PEN]));
+  document.removeEventListener('touchend', reached); document.removeEventListener('touchcancel', reached);
+  document.removeEventListener('mouseup', ups);
+  outside.remove();
+  expect(reached).not.toHaveBeenCalled();
+  expect(ups).not.toHaveBeenCalled(); // the Pencil stroke is still going
+});
+
+test('with no pad stroke active, an off-pad touchend still reaches the page', async () => {
   render(<WritingPad {...base} tier="practice" onFinish={() => {}} />);
   await act(async () => {});
   const pad = screen.getByTestId('writing-pad');
   const reached = vi.fn();
   document.addEventListener('touchend', reached);
   pad.dispatchEvent(ev('touchstart', [PEN]));
-  document.dispatchEvent(ev('touchend', [{ id: 9, type: 'direct' }]));
+  pad.dispatchEvent(ev('touchend', [PEN], []));
+  document.dispatchEvent(ev('touchend', [{ id: 9, type: 'direct' }], []));
   document.removeEventListener('touchend', reached);
   expect(reached).toHaveBeenCalledTimes(1);
+});
+
+test('after the Pencil was used, a finger touch is ignored for the rest of the attempt, even after a pause (Important 3)', async () => {
+  const kinds: string[] = []; const downs = vi.fn();
+  const { container } = render(<WritingPad {...base} tier="practice" onInputSeen={k => kinds.push(k)} onFinish={() => {}} />);
+  await act(async () => {});
+  const pad = screen.getByTestId('writing-pad');
+  container.querySelector('[data-hw]')!.addEventListener('mousedown', downs);
+  let now = 1000;
+  const clock = vi.spyOn(performance, 'now').mockImplementation(() => now);
+  try {
+    pad.dispatchEvent(ev('touchstart', [PEN]));
+    pad.dispatchEvent(ev('touchend', [PEN], []));
+    expect(downs).toHaveBeenCalledTimes(1);
+    now += 5000; // well past the 1.5 s pen grace
+    pad.dispatchEvent(ev('touchstart', [PALM]));
+    expect(downs).toHaveBeenCalledTimes(1);
+    expect(kinds).toEqual(['pen']);
+  } finally { clock.mockRestore(); }
 });
 
 test('a native mouse event right after a touch is hidden from Hanzi Writer; a synthetic one is not', async () => {
