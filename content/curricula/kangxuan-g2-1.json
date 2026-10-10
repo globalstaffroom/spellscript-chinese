@@ -1,0 +1,1598 @@
+{
+ "id": "kangxuan-g2-1",
+ "publisher": "康軒",
+ "grade": 2,
+ "semester": 1,
+ "book": "國語 2上",
+ "edition": "111學年度 (PDF files dated 2022-06)",
+ "sourcePages": "each lesson PDF, 語文焦點「一、我會寫字」",
+ "note": "生字 transcribed by eye from the textbook page images, 2026-10-10. Stroke counts are as printed (MOE standard). zhuyin not yet transcribed. Validated against Unihan kRSUnicode; entries with taiwanStandardDiffers=true do not match Unicode data because the Taiwan standard form differs, and were re-checked against the image.",
+ "lessons": [
+  {
+   "lesson": 1,
+   "title": "新學年新希望",
+   "write": [
+    {
+     "char": "年",
+     "radical": "干",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "希",
+     "radical": "巾",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "望",
+     "radical": "月",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "坐",
+     "radical": "土",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "位",
+     "radical": "人",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "本",
+     "radical": "木",
+     "strokesAfterRadical": 1,
+     "totalStrokes": 5,
+     "zhuyin": null
+    },
+    {
+     "char": "淡",
+     "radical": "水",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "書",
+     "radical": "曰",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 10,
+     "zhuyin": null
+    },
+    {
+     "char": "老",
+     "radical": "老",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "師",
+     "radical": "巾",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 10,
+     "zhuyin": null
+    },
+    {
+     "char": "以",
+     "radical": "人",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 5,
+     "zhuyin": null
+    },
+    {
+     "char": "為",
+     "radical": "火",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "故",
+     "radical": "攴",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "用",
+     "radical": "用",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 5,
+     "zhuyin": null
+    },
+    {
+     "char": "力",
+     "radical": "力",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 2,
+     "zhuyin": null
+    },
+    {
+     "char": "只",
+     "radical": "口",
+     "strokesAfterRadical": 2,
+     "totalStrokes": 5,
+     "zhuyin": null
+    },
+    {
+     "char": "現",
+     "radical": "玉",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "還",
+     "radical": "辵",
+     "strokesAfterRadical": 13,
+     "totalStrokes": 17,
+     "zhuyin": null
+    }
+   ]
+  },
+  {
+   "lesson": 2,
+   "title": "一起做早餐",
+   "write": [
+    {
+     "char": "全",
+     "radical": "入",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "蛋",
+     "radical": "虫",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "煎",
+     "radical": "火",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 13,
+     "zhuyin": null
+    },
+    {
+     "char": "圓",
+     "radical": "囗",
+     "strokesAfterRadical": 10,
+     "totalStrokes": 13,
+     "zhuyin": null
+    },
+    {
+     "char": "番",
+     "radical": "田",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "茄",
+     "radical": "艸",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "切",
+     "radical": "刀",
+     "strokesAfterRadical": 2,
+     "totalStrokes": 4,
+     "zhuyin": null
+    },
+    {
+     "char": "輪",
+     "radical": "車",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 15,
+     "zhuyin": null
+    },
+    {
+     "char": "司",
+     "radical": "口",
+     "strokesAfterRadical": 2,
+     "totalStrokes": 5,
+     "zhuyin": null
+    },
+    {
+     "char": "夾",
+     "radical": "大",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "吐",
+     "radical": "口",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "中",
+     "radical": "丨",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 4,
+     "zhuyin": null
+    },
+    {
+     "char": "方",
+     "radical": "方",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 4,
+     "zhuyin": null
+    },
+    {
+     "char": "城",
+     "radical": "土",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "堡",
+     "radical": "土",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "接",
+     "radical": "手",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "畫",
+     "radical": "田",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "臉",
+     "radical": "肉",
+     "strokesAfterRadical": 13,
+     "totalStrokes": 17,
+     "zhuyin": null
+    }
+   ]
+  },
+  {
+   "lesson": 3,
+   "title": "走過小巷",
+   "write": [
+    {
+     "char": "巷",
+     "radical": "己",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "叔",
+     "radical": "又",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "貓",
+     "radical": "豸",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 16,
+     "zhuyin": null
+    },
+    {
+     "char": "屋",
+     "radical": "尸",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "捧",
+     "radical": "手",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "蝴",
+     "radical": "虫",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 15,
+     "zhuyin": null
+    },
+    {
+     "char": "蝶",
+     "radical": "虫",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 15,
+     "zhuyin": null
+    },
+    {
+     "char": "忙",
+     "radical": "心",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "娶",
+     "radical": "女",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "娘",
+     "radical": "女",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 10,
+     "zhuyin": null
+    },
+    {
+     "char": "黃",
+     "radical": "黃",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "筆",
+     "radical": "竹",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "打",
+     "radical": "手",
+     "strokesAfterRadical": 2,
+     "totalStrokes": 5,
+     "zhuyin": null
+    },
+    {
+     "char": "扮",
+     "radical": "手",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "樣",
+     "radical": "木",
+     "strokesAfterRadical": 11,
+     "totalStrokes": 15,
+     "zhuyin": null
+    },
+    {
+     "char": "越",
+     "radical": "走",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "美",
+     "radical": "羊",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "麗",
+     "radical": "鹿",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 19,
+     "zhuyin": null
+    }
+   ]
+  },
+  {
+   "lesson": 4,
+   "title": "運動會",
+   "write": [
+    {
+     "char": "運",
+     "radical": "辵",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 13,
+     "zhuyin": null
+    },
+    {
+     "char": "動",
+     "radical": "力",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "飄",
+     "radical": "風",
+     "strokesAfterRadical": 11,
+     "totalStrokes": 20,
+     "zhuyin": null
+    },
+    {
+     "char": "熱",
+     "radical": "火",
+     "strokesAfterRadical": 11,
+     "totalStrokes": 15,
+     "zhuyin": null
+    },
+    {
+     "char": "鬧",
+     "radical": "鬥",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 15,
+     "zhuyin": null
+    },
+    {
+     "char": "舞",
+     "radical": "舛",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 14,
+     "zhuyin": null
+    },
+    {
+     "char": "哇",
+     "radical": "口",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "往",
+     "radical": "彳",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "容",
+     "radical": "宀",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 10,
+     "zhuyin": null
+    },
+    {
+     "char": "步",
+     "radical": "止",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "汗",
+     "radical": "水",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "腳",
+     "radical": "肉",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 13,
+     "zhuyin": null
+    },
+    {
+     "char": "協",
+     "radical": "十",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "聲",
+     "radical": "耳",
+     "strokesAfterRadical": 11,
+     "totalStrokes": 17,
+     "zhuyin": null
+    },
+    {
+     "char": "河",
+     "radical": "水",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "氣",
+     "radical": "气",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 10,
+     "zhuyin": null
+    },
+    {
+     "char": "最",
+     "radical": "冂",
+     "strokesAfterRadical": 10,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "可",
+     "radical": "口",
+     "strokesAfterRadical": 2,
+     "totalStrokes": 5,
+     "zhuyin": null
+    }
+   ]
+  },
+  {
+   "lesson": 5,
+   "title": "水上木偶戲",
+   "write": [
+    {
+     "char": "木",
+     "radical": "木",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 4,
+     "zhuyin": null
+    },
+    {
+     "char": "偶",
+     "radical": "人",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "鄉",
+     "radical": "邑",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "南",
+     "radical": "十",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "暑",
+     "radical": "日",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "假",
+     "radical": "人",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "帶",
+     "radical": "巾",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "池",
+     "radical": "水",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "牛",
+     "radical": "牛",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 4,
+     "zhuyin": null
+    },
+    {
+     "char": "旁",
+     "radical": "方",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 10,
+     "zhuyin": null
+    },
+    {
+     "char": "邊",
+     "radical": "辵",
+     "strokesAfterRadical": 15,
+     "totalStrokes": 19,
+     "zhuyin": null
+    },
+    {
+     "char": "演",
+     "radical": "水",
+     "strokesAfterRadical": 11,
+     "totalStrokes": 14,
+     "zhuyin": null
+    },
+    {
+     "char": "叫",
+     "radical": "口",
+     "strokesAfterRadical": 2,
+     "totalStrokes": 5,
+     "zhuyin": null
+    },
+    {
+     "char": "原",
+     "radical": "厂",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 10,
+     "zhuyin": null
+    },
+    {
+     "char": "站",
+     "radical": "立",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 10,
+     "zhuyin": null
+    },
+    {
+     "char": "竿",
+     "radical": "竹",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "田",
+     "radical": "田",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 5,
+     "zhuyin": null
+    },
+    {
+     "char": "識",
+     "radical": "言",
+     "strokesAfterRadical": 12,
+     "totalStrokes": 19,
+     "zhuyin": null
+    }
+   ]
+  },
+  {
+   "lesson": 6,
+   "title": "小鎮的柿餅節",
+   "write": [
+    {
+     "char": "鎮",
+     "radical": "金",
+     "strokesAfterRadical": 10,
+     "totalStrokes": 18,
+     "zhuyin": null
+    },
+    {
+     "char": "餅",
+     "radical": "食",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 14,
+     "zhuyin": null
+    },
+    {
+     "char": "節",
+     "radical": "竹",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 13,
+     "zhuyin": null
+    },
+    {
+     "char": "活",
+     "radical": "水",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "進",
+     "radical": "辵",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "排",
+     "radical": "手",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "遠",
+     "radical": "辵",
+     "strokesAfterRadical": 10,
+     "totalStrokes": 14,
+     "zhuyin": null
+    },
+    {
+     "char": "籃",
+     "radical": "竹",
+     "strokesAfterRadical": 14,
+     "totalStrokes": 20,
+     "zhuyin": null
+    },
+    {
+     "char": "近",
+     "radical": "辵",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "愛",
+     "radical": "心",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 13,
+     "zhuyin": null
+    },
+    {
+     "char": "月",
+     "radical": "月",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 4,
+     "zhuyin": null
+    },
+    {
+     "char": "乾",
+     "radical": "乙",
+     "strokesAfterRadical": 10,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "甜",
+     "radical": "甘",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "客",
+     "radical": "宀",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "買",
+     "radical": "貝",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "親",
+     "radical": "見",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 16,
+     "zhuyin": null
+    },
+    {
+     "char": "如",
+     "radical": "女",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "意",
+     "radical": "心",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 13,
+     "zhuyin": null
+    }
+   ]
+  },
+  {
+   "lesson": 7,
+   "title": "國王的新衣",
+   "write": [
+    {
+     "char": "衣",
+     "radical": "衣",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "胖",
+     "radical": "肉",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "針",
+     "radical": "金",
+     "strokesAfterRadical": 2,
+     "totalStrokes": 10,
+     "zhuyin": null
+    },
+    {
+     "char": "簡",
+     "radical": "竹",
+     "strokesAfterRadical": 12,
+     "totalStrokes": 18,
+     "zhuyin": null
+    },
+    {
+     "char": "單",
+     "radical": "口",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "聰",
+     "radical": "耳",
+     "strokesAfterRadical": 11,
+     "totalStrokes": 17,
+     "zhuyin": null
+    },
+    {
+     "char": "明",
+     "radical": "日",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "臣",
+     "radical": "臣",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "敢",
+     "radical": "攴",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "東",
+     "radical": "木",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "西",
+     "radical": "襾",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "直",
+     "radical": "目",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "棒",
+     "radical": "木",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "街",
+     "radical": "行",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "滿",
+     "radical": "水",
+     "strokesAfterRadical": 11,
+     "totalStrokes": 14,
+     "zhuyin": null
+    },
+    {
+     "char": "眼",
+     "radical": "目",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "哪",
+     "radical": "口",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 10,
+     "zhuyin": null
+    },
+    {
+     "char": "思",
+     "radical": "心",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 9,
+     "zhuyin": null
+    }
+   ]
+  },
+  {
+   "lesson": 8,
+   "title": "「聰明」的小熊",
+   "write": [
+    {
+     "char": "渴",
+     "radical": "水",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "烏",
+     "radical": "火",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 10,
+     "zhuyin": null
+    },
+    {
+     "char": "喝",
+     "radical": "口",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "瓶",
+     "radical": "瓦",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "法",
+     "radical": "水",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "森",
+     "radical": "木",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "林",
+     "radical": "木",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "物",
+     "radical": "牛",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "旅",
+     "radical": "方",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 10,
+     "zhuyin": null
+    },
+    {
+     "char": "行",
+     "radical": "行",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "午",
+     "radical": "十",
+     "strokesAfterRadical": 2,
+     "totalStrokes": 4,
+     "zhuyin": null
+    },
+    {
+     "char": "裝",
+     "radical": "衣",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 13,
+     "zhuyin": null
+    },
+    {
+     "char": "許",
+     "radical": "言",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "石",
+     "radical": "石",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 5,
+     "zhuyin": null
+    },
+    {
+     "char": "難",
+     "radical": "隹",
+     "strokesAfterRadical": 11,
+     "totalStrokes": 19,
+     "zhuyin": null
+    },
+    {
+     "char": "忘",
+     "radical": "心",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "哈",
+     "radical": "口",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "但",
+     "radical": "人",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 7,
+     "zhuyin": null
+    }
+   ]
+  },
+  {
+   "lesson": 9,
+   "title": "大象有多重？",
+   "write": [
+    {
+     "char": "象",
+     "radical": "豕",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "操",
+     "radical": "手",
+     "strokesAfterRadical": 13,
+     "totalStrokes": 16,
+     "zhuyin": null
+    },
+    {
+     "char": "粗",
+     "radical": "米",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "腿",
+     "radical": "肉",
+     "strokesAfterRadical": 10,
+     "totalStrokes": 14,
+     "zhuyin": null
+    },
+    {
+     "char": "柱",
+     "radical": "木",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "砍",
+     "radical": "石",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "幾",
+     "radical": "幺",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "部",
+     "radical": "邑",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "搖",
+     "radical": "手",
+     "strokesAfterRadical": 10,
+     "totalStrokes": 13,
+     "zhuyin": null
+    },
+    {
+     "char": "沖",
+     "radical": "水",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "首",
+     "radical": "首",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "牽",
+     "radical": "牛",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "沉",
+     "radical": "水",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "少",
+     "radical": "小",
+     "strokesAfterRadical": 1,
+     "totalStrokes": 4,
+     "zhuyin": null
+    },
+    {
+     "char": "沿",
+     "radical": "水",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "然",
+     "radical": "火",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "紀",
+     "radical": "糸",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "竟",
+     "radical": "音",
+     "strokesAfterRadical": 2,
+     "totalStrokes": 11,
+     "zhuyin": null
+    }
+   ]
+  },
+  {
+   "lesson": 10,
+   "title": "我愛冬天",
+   "write": [
+    {
+     "char": "冬",
+     "radical": "冫",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 5,
+     "zhuyin": null
+    },
+    {
+     "char": "灰",
+     "radical": "火",
+     "strokesAfterRadical": 2,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "北",
+     "radical": "匕",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 5,
+     "zhuyin": null
+    },
+    {
+     "char": "冷",
+     "radical": "冫",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "飛",
+     "radical": "飛",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "牠",
+     "radical": "牛",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "發",
+     "radical": "癶",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "冒",
+     "radical": "冂",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "煙",
+     "radical": "火",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 13,
+     "zhuyin": null
+    },
+    {
+     "char": "圍",
+     "radical": "囗",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "飯",
+     "radical": "食",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "咪",
+     "radical": "口",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "團",
+     "radical": "囗",
+     "strokesAfterRadical": 11,
+     "totalStrokes": 14,
+     "zhuyin": null
+    },
+    {
+     "char": "聚",
+     "radical": "耳",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 14,
+     "zhuyin": null
+    },
+    {
+     "char": "愉",
+     "radical": "心",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "火",
+     "radical": "火",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 4,
+     "zhuyin": null
+    },
+    {
+     "char": "鍋",
+     "radical": "金",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 17,
+     "zhuyin": null
+    },
+    {
+     "char": "妙",
+     "radical": "女",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 7,
+     "zhuyin": null
+    }
+   ]
+  },
+  {
+   "lesson": 11,
+   "title": "遠方來的黑皮",
+   "write": [
+    {
+     "char": "皮",
+     "radical": "皮",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 5,
+     "zhuyin": null
+    },
+    {
+     "char": "色",
+     "radical": "色",
+     "strokesAfterRadical": 0,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "具",
+     "radical": "八",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "者",
+     "radical": "老",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "洋",
+     "radical": "水",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "寒",
+     "radical": "宀",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "嘴",
+     "radical": "口",
+     "strokesAfterRadical": 13,
+     "totalStrokes": 16,
+     "zhuyin": null,
+     "taiwanStandardDiffers": true
+    },
+    {
+     "char": "伸",
+     "radical": "人",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "飽",
+     "radical": "食",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 13,
+     "zhuyin": null
+    },
+    {
+     "char": "泥",
+     "radical": "水",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "沙",
+     "radical": "水",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "慌",
+     "radical": "心",
+     "strokesAfterRadical": 10,
+     "totalStrokes": 13,
+     "zhuyin": null
+    },
+    {
+     "char": "服",
+     "radical": "月",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "翅",
+     "radical": "羽",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 10,
+     "zhuyin": null
+    },
+    {
+     "char": "膀",
+     "radical": "肉",
+     "strokesAfterRadical": 10,
+     "totalStrokes": 14,
+     "zhuyin": null
+    },
+    {
+     "char": "充",
+     "radical": "儿",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 5,
+     "zhuyin": null,
+     "taiwanStandardDiffers": true
+    },
+    {
+     "char": "等",
+     "radical": "竹",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "念",
+     "radical": "心",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 8,
+     "zhuyin": null
+    }
+   ]
+  },
+  {
+   "lesson": 12,
+   "title": "新年快樂",
+   "write": [
+    {
+     "char": "雪",
+     "radical": "雨",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "梨",
+     "radical": "木",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "夜",
+     "radical": "夕",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "卻",
+     "radical": "卩",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "因",
+     "radical": "囗",
+     "strokesAfterRadical": 3,
+     "totalStrokes": 6,
+     "zhuyin": null
+    },
+    {
+     "char": "臺",
+     "radical": "至",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 14,
+     "zhuyin": null
+    },
+    {
+     "char": "季",
+     "radical": "子",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 8,
+     "zhuyin": null
+    },
+    {
+     "char": "相",
+     "radical": "目",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "反",
+     "radical": "又",
+     "strokesAfterRadical": 2,
+     "totalStrokes": 4,
+     "zhuyin": null
+    },
+    {
+     "char": "吹",
+     "radical": "口",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 7,
+     "zhuyin": null
+    },
+    {
+     "char": "待",
+     "radical": "彳",
+     "strokesAfterRadical": 6,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "綻",
+     "radical": "糸",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 14,
+     "zhuyin": null
+    },
+    {
+     "char": "雖",
+     "radical": "隹",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 17,
+     "zhuyin": null
+    },
+    {
+     "char": "春",
+     "radical": "日",
+     "strokesAfterRadical": 5,
+     "totalStrokes": 9,
+     "zhuyin": null
+    },
+    {
+     "char": "貨",
+     "radical": "貝",
+     "strokesAfterRadical": 4,
+     "totalStrokes": 11,
+     "zhuyin": null
+    },
+    {
+     "char": "期",
+     "radical": "月",
+     "strokesAfterRadical": 8,
+     "totalStrokes": 12,
+     "zhuyin": null
+    },
+    {
+     "char": "敬",
+     "radical": "攴",
+     "strokesAfterRadical": 9,
+     "totalStrokes": 13,
+     "zhuyin": null
+    },
+    {
+     "char": "孫",
+     "radical": "子",
+     "strokesAfterRadical": 7,
+     "totalStrokes": 10,
+     "zhuyin": null
+    }
+   ]
+  }
+ ]
+}
