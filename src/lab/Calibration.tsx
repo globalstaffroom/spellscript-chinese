@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import calibration from '../../content/calibration.json';
 import type { CalibrationSet } from '../content/check';
 import { openStoreOrMemory, requestPersistence, type Store } from '../storage/db';
@@ -26,6 +26,10 @@ export function Calibration() {
   const [lastInput, setLastInput] = useState<InputKind>('finger');
   const [results, setResults] = useState<AttemptRecord[]>([]);
   const [exported, setExported] = useState<string | null>(null);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const clearTimer = useCallback(() => { if (timer.current !== null) { clearTimeout(timer.current); timer.current = null; } }, []);
+  const advance = useCallback(() => { clearTimer(); setI(n => n + 1); }, [clearTimer]);
+  useEffect(() => clearTimer, [clearTimer]);
 
   useEffect(() => {
     void (async () => {
@@ -101,10 +105,10 @@ export function Calibration() {
         onFinish={async r => {
           await store.addAttempt(r);
           const w = store.warning(); if (w) setWarning(w);
-          if (r.result !== 'abandoned') { setResults(x => [...x, r]); setTimeout(() => setI(n => n + 1), 600); }
+          if (r.result !== 'abandoned') { setResults(x => [...x, r]); clearTimer(); timer.current = setTimeout(advance, 600); }
         }}
       />
-      <p><button onClick={() => setI(n => n + 1)}>Skip</button></p>
+      <p><button onClick={advance}>Skip</button></p>
     </section>
   );
 }

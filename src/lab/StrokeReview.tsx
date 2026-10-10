@@ -13,7 +13,7 @@ import { StrokeDiagram } from '../writing/StrokeDiagram';
 import { downloadJson } from './download';
 
 const KEY = 'ssc-stroke-review-v1';
-const load = (): Verified => { try { return JSON.parse(localStorage.getItem(KEY) ?? '{}'); } catch { return {}; } };
+const load = (): Verified | null => { try { const raw = localStorage.getItem(KEY); return raw === null ? null : JSON.parse(raw); } catch { return null; } };
 const save = (v: Verified) => { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch { /* storage blocked: export still works */ } };
 
 type Group = { id: string; label: string; chars: string[] };
@@ -25,7 +25,7 @@ export function StrokeReview() {
     { id: 'extras', label: 'Extra characters', chars: (extras as { char: string }[]).map(e => e.char) },
   ], []);
   const [groupId, setGroupId] = useState('calibration');
-  const [verified, setVerified] = useState<Verified>(() => ({ ...(verifiedFile as unknown as Verified), ...load() }));
+  const [verified, setVerified] = useState<Verified>(() => load() ?? (verifiedFile as unknown as Verified));
   const [exported, setExported] = useState<string | null>(null);
   const sources = useMemo(() => new Map((report as unknown as StrokeReport).chars.map(c => [c.char, c])), []);
   const group = groups.find(g => g.id === groupId)!;
