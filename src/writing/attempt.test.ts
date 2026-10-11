@@ -45,3 +45,19 @@ test('a missing raw stroke is recorded as null, not invented', () => {
   expect(s.strokes[0]?.raw).toBeNull();
   expect(finishAttempt(s, 'passed', 1).inputs).toEqual([]);
 });
+
+test('total mistakes are counted by the attempt, not copied from Hanzi Writer, whose count resets on a quiz restart', () => {
+  let s = startAttempt(init);
+  s = recordStroke(s, ev({ isCorrect: false, mistakesOnStroke: 1, totalMistakes: 1 }), null);
+  s = recordStroke(s, ev({ isCorrect: false, mistakesOnStroke: 2, totalMistakes: 2 }), null);
+  s = recordStroke(s, ev({ isCorrect: true, totalMistakes: 0 }), null); // the quiz was restarted: Hanzi Writer says 0
+  expect(s.totalMistakes).toBe(2);
+  s = recordStroke(s, ev({ strokeNum: 1, isCorrect: false, mistakesOnStroke: 1, totalMistakes: 1 }), null);
+  s = recordStroke(s, ev({ strokeNum: 1, isCorrect: false, mistakesOnStroke: 2, totalMistakes: 2 }), null);
+  expect(s.totalMistakes).toBe(4);
+  expect(isOverMistakeLimit(s)).toBe(true); // 修行 fails at 4
+});
+
+test('an attempt starts on the primary stroke order', () => {
+  expect(finishAttempt(startAttempt(init), 'abandoned', 1).order).toBeNull();
+});

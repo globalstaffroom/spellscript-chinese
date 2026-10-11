@@ -6,7 +6,7 @@ import type { AttemptRecord } from '../writing/attempt';
 const profile = (id: string): Profile => ({ id, nickname: '小猴', avatar: '🐒', curriculumId: 'kangxuan-g2-1', lesson: 3, tier: 'practice', lastInput: 'finger', createdAt: 1 });
 const attempt = (id: string, profileId: string): AttemptRecord => ({
   id, profileId, char: '木', expectedChar: null, word: null, context: 'calibration', tier: 'practice', leniencyInput: 'finger',
-  inputs: ['finger'], outlineVisible: false, hintShown: false, strokes: [], totalMistakes: 0, result: 'passed',
+  inputs: ['finger'], outlineVisible: false, hintShown: false, order: null, strokes: [], totalMistakes: 0, result: 'passed',
   checker: 'x', startedAt: 1, endedAt: 2,
 });
 

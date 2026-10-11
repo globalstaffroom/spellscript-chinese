@@ -11,6 +11,7 @@ export type StrokeEvent = {
   isCorrect: boolean;
   isBackwards: boolean;
   mistakesOnStroke: number;
+  /** Hanzi Writer's per-quiz count. Kept for compatibility but NOT trusted: it resets on every quiz() restart. */
   totalMistakes: number;
   drawn: { x: number; y: number }[];
 };
@@ -41,7 +42,10 @@ export type AttemptRecord = {
   inputs: InputKind[];
   outlineVisible: boolean;
   hintShown: boolean;
+  /** The stroke order graded against: null = primary, else the alternate permutation (StrokeResult.strokeNum indexes it). */
+  order: number[] | null;
   strokes: StrokeResult[];
+  /** Counted by recordStroke (one per rejected stroke), not copied from Hanzi Writer. */
   totalMistakes: number;
   result: AttemptResult;
   checker: string;
@@ -57,7 +61,7 @@ export function startAttempt(i: {
 }): AttemptState {
   return {
     id: i.id, profileId: i.profileId, char: i.char, expectedChar: i.expectedChar, word: i.word, context: i.context,
-    tier: i.tier, leniencyInput: i.leniencyInput, outlineVisible: i.outlineVisible, hintShown: false, strokes: [],
+    tier: i.tier, leniencyInput: i.leniencyInput, outlineVisible: i.outlineVisible, hintShown: false, order: null, strokes: [],
     totalMistakes: 0, checker: CHECKER_VERSION, startedAt: i.now,
   };
 }
@@ -68,7 +72,7 @@ export function recordStroke(s: AttemptState, e: StrokeEvent, raw: RawStroke | n
     strokeNum: e.strokeNum, accepted: e.isCorrect, backwards: e.isBackwards, mistakesOnStroke: e.mistakesOnStroke,
     drawn: e.drawn, raw, hintShownAfter: hint,
   };
-  return { ...s, strokes: [...s.strokes, stroke], totalMistakes: e.totalMistakes, hintShown: s.hintShown || hint };
+  return { ...s, strokes: [...s.strokes, stroke], totalMistakes: s.totalMistakes + (e.isCorrect ? 0 : 1), hintShown: s.hintShown || hint };
 }
 
 export const isOverMistakeLimit = (s: AttemptState) => s.totalMistakes >= TIERS[s.tier].maxMistakes;

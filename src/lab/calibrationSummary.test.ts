@@ -3,7 +3,7 @@ import type { AttemptRecord } from '../writing/attempt';
 
 const a = (o: Partial<AttemptRecord>): AttemptRecord => ({
   id: 'x', profileId: 'p', char: '木', expectedChar: null, word: null, context: 'calibration', tier: 'practice', leniencyInput: 'finger',
-  inputs: ['finger'], outlineVisible: false, hintShown: false, strokes: [], totalMistakes: 0, result: 'passed', checker: 'c', startedAt: 0, endedAt: 1, ...o,
+  inputs: ['finger'], outlineVisible: false, hintShown: false, order: null, strokes: [], totalMistakes: 0, result: 'passed', checker: 'c', startedAt: 0, endedAt: 1, ...o,
 });
 const s = (accepted: boolean) => ({ strokeNum: 0, accepted, backwards: false, mistakesOnStroke: accepted ? 0 : 1, drawn: [], raw: null, hintShownAfter: false });
 
