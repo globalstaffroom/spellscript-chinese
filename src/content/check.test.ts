@@ -44,3 +44,21 @@ test('curriculum problems are reported', () => {
 });
 
 test('a report built for a different count is stale', () => { expect(checkContent({ curricula: [cur], extras: [], report: report([ok('年', 5), ok('茄', 9)]), verified: {}, requireVerified: [] })).toHaveLength(1); });
+
+test('alternate stroke orders are checked against the MOE stroke count of the content', () => {
+  const r = report([ok('年', 6), ok('茄', 9)]);
+  const alternates = {
+    年: { orders: [[0, 1, 2, 3, 5, 4], [0, 1, 2, 3, 4], [0, 0, 1, 2, 3, 4], [0, 1, 2, 3, 4, 5]], source: 's' },
+    木: { orders: [[1, 0, 2, 3]], source: 's' },
+  };
+  expect(checkContent({ curricula: [cur], extras: [], report: r, verified: {}, requireVerified: [], alternates })).toEqual([
+    '年: alternate order 2 has 5 strokes but the character has 6',
+    '年: alternate order 3 is not a permutation of 0..5',
+    '年: alternate order 4 is the same as the primary order',
+    '木: alternate stroke order for a character not in the content',
+  ]);
+});
+
+test('no alternates file means no alternate problems', () => {
+  expect(checkContent({ curricula: [cur], extras: [], report: report([ok('年', 6), ok('茄', 9)]), verified: {}, requireVerified: [] })).toEqual([]);
+});

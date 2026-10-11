@@ -1,3 +1,4 @@
+import { validateAlternates, type Alternates } from './alternates';
 import { validateCurriculum } from './curriculum';
 import type { StrokeSourceName } from './strokeSelect';
 import { collectTargets } from './targets';
@@ -23,6 +24,8 @@ export function checkContent(input: {
   report: StrokeReport;
   verified: Verified;
   requireVerified: string[];
+  /** content/strokes/alternates.json; absent means no character has a second official order. */
+  alternates?: Alternates;
 }): string[] {
   const problems: string[] = [];
   for (const c of input.curricula) {
@@ -46,6 +49,7 @@ export function checkContent(input: {
       problems.push(`${char}: no stroke data with the MOE count ${expected} (rejected: ${rej})`);
     }
   }
+  problems.push(...validateAlternates(input.alternates ?? {}, targets));
   for (const char of input.requireVerified) {
     if (!input.verified[char]) problems.push(`${char}: stroke order not yet verified against MOE 筆順`);
   }
