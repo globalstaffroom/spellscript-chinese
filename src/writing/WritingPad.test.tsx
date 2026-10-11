@@ -228,7 +228,7 @@ const fang = { ...base, char: '方', loader: fangLoader, alternates: [[0, 1, 3, 
 const fstroke = (o: Opts) => stroke({ character: '方', ...o });
 
 /** Renders 方 with the pad at a movable screen position; `verdict` plays Hanzi Writer's reply to the replayed stroke. */
-async function mountFang(tier: 'apprentice' | 'practice' = 'practice') {
+async function mountFang(tier: 'apprentice' | 'practice' | 'master' = 'practice') {
   fangLoader.mockClear();
   const done: AttemptRecord[] = [];
   const view = render(<WritingPad {...fang} tier={tier} onFinish={r => done.push(r)} />);
@@ -299,7 +299,7 @@ test('after the switch, the character data Hanzi Writer loads is the permuted ba
   expect(fangLoader).toHaveBeenCalledTimes(1);
 });
 
-test('a replay rejected under the alternate too is one mistake; the pad switches back and never switches again on that stroke', async () => {
+test('a replay rejected under the alternate too is one mistake; the pad switches back, and each further miss there is retried and counted once', async () => {
   const f = await mountFang();
   f.draw([[110, 60], [130, 80]]);
   f.verdict.fn = () => h.quizOpts!.onMistake(fstroke({ strokeNum: 2, mistakesOnStroke: 1, totalMistakes: 1 }));
@@ -310,9 +310,10 @@ test('a replay rejected under the alternate too is one mistake; the pad switches
   const data = await new Promise<typeof fangData>(res => h.createOpts!.charDataLoader('方', res, () => {}));
   expect(data.strokes).toEqual(fangData.strokes); // back on the textbook order
   f.draw([[110, 60], [150, 90]]);
+  f.verdict.fn = () => h.quizOpts!.onMistake(fstroke({ strokeNum: 2, mistakesOnStroke: 1, totalMistakes: 1 }));
   await act(async () => { h.quizOpts!.onMistake(fstroke({ strokeNum: 2, mistakesOnStroke: 1, totalMistakes: 1 })); });
-  expect(h.setCharacter).toHaveBeenCalledTimes(2);
-  expect(h.quizCalls).toHaveLength(3);
+  expect(h.setCharacter).toHaveBeenCalledTimes(4); // tried the alternate again, then back to the textbook order
+  expect(h.quizCalls).toHaveLength(5);
   f.unmount(); f.cleanup();
   const r = f.done[0]!;
   expect(r.result).toBe('abandoned');
@@ -391,4 +392,41 @@ test('while the switch is in flight a mouse press does not reach Hanzi Writer or
   f.unmount(); f.cleanup();
   // The held stroke was replayed and accepted; the press during the switch left no raw stroke to pair with stroke 3.
   expect(f.done[0]!.strokes.map(s => [s.strokeNum, s.raw?.input ?? null])).toEqual([[2, 'mouse'], [3, null]]);
+});
+
+test('a sloppy first try at the divergence stroke does not lock out the alternate: a later correct teacher-order stroke passes', async () => {
+  const f = await mountFang();
+  act(() => { h.quizOpts!.onCorrectStroke(fstroke({ strokeNum: 0 })); h.quizOpts!.onCorrectStroke(fstroke({ strokeNum: 1 })); });
+  f.draw([[110, 60], [130, 80]]); // sloppy: wrong under both orders
+  f.verdict.fn = () => h.quizOpts!.onMistake(fstroke({ strokeNum: 2, mistakesOnStroke: 1, totalMistakes: 1 }));
+  await act(async () => { h.quizOpts!.onMistake(fstroke({ strokeNum: 2, mistakesOnStroke: 1, totalMistakes: 1 })); });
+  expect(h.quizCalls).toHaveLength(3); // back on the primary order
+  f.draw([[150, 70], [160, 90]]); // a correct teacher-order stroke 2 (the 撇)
+  f.verdict.fn = () => h.quizOpts!.onCorrectStroke(fstroke({ strokeNum: 2 }));
+  await act(async () => { h.quizOpts!.onMistake(fstroke({ strokeNum: 2, mistakesOnStroke: 1, totalMistakes: 1 })); });
+  expect(h.setCharacter).toHaveBeenCalledTimes(3);
+  expect(h.quizCalls).toHaveLength(4);
+  expect(h.quizCalls[3]).toMatchObject({ quizStartStrokeNum: 2 });
+  act(() => { h.quizOpts!.onCorrectStroke(fstroke({ strokeNum: 3 })); h.quizOpts!.onComplete({ character: '方', totalMistakes: 0 }); });
+  f.cleanup();
+  const r = f.done[0]!;
+  expect(r.result).toBe('passed');
+  expect(r.totalMistakes).toBe(1);
+  expect(r.order).toEqual([0, 1, 3, 2]);
+  expect(r.strokes.map(s => [s.strokeNum, s.accepted])).toEqual([[0, true], [1, true], [2, false], [2, true], [3, true]]);
+  expect(r.strokes[3]!.raw?.points.map(p => [p.x, p.y])).toEqual([[50, 20], [60, 40]]);
+});
+
+test('a rejected replay that reaches the mistake limit fails the attempt without switching back (大師: fails at 2)', async () => {
+  const f = await mountFang('master');
+  f.draw([[110, 60], [120, 70]]);
+  await act(async () => { h.quizOpts!.onMistake(fstroke({ strokeNum: 1, mistakesOnStroke: 1, totalMistakes: 1 })); });
+  f.draw([[110, 60], [130, 80]]);
+  f.verdict.fn = () => h.quizOpts!.onMistake(fstroke({ strokeNum: 2, mistakesOnStroke: 1, totalMistakes: 1 }));
+  await act(async () => { h.quizOpts!.onMistake(fstroke({ strokeNum: 2, mistakesOnStroke: 1, totalMistakes: 1 })); });
+  f.cleanup();
+  expect(f.done.map(d => [d.result, d.totalMistakes, d.order])).toEqual([['failed', 2, null]]);
+  expect(h.cancelQuiz).toHaveBeenCalled();
+  expect(h.setCharacter).toHaveBeenCalledTimes(1); // switched to the alternate once, never back
+  expect(h.quizCalls).toHaveLength(2);
 });

@@ -124,7 +124,6 @@ export function WritingPad(p: Props) {
     // rejected stroke, reloads the character in the alternate order and replays the held stroke through Hanzi Writer.
     const alts = p.alternates ?? [];
     let order: number[] | null = null; // null = primary
-    const tried = new Set<string>(); // `${stroke}:${alternate}` already tried in this attempt
     let switching = false; // while a switch/replay is in flight, no new child stroke starts
     let replay: { held: RawStroke; accepted: boolean } | null = null;
     const compat = (e: MouseEvent) => !synthetic.has(e) && performance.now() - lastTouch < 800;
@@ -180,7 +179,9 @@ export function WritingPad(p: Props) {
       }
       const raw = queue.take();
       if (!isCorrect && order === null && raw) {
-        const j = alts.findIndex((alt, n) => divergeAt(alt) === s.strokeNum && !tried.has(`${s.strokeNum}:${n}`));
+        // Every miss at the divergence stroke tries the alternate again; only the replay's verdict decides. Each held
+        // event is replayed once (the replay's own verdict is captured above, never re-held), so this cannot loop.
+        const j = alts.findIndex(alt => divergeAt(alt) === s.strokeNum);
         if (j >= 0) { void tryAlternate(j, e, raw); return; }
       }
       record(e, raw);
@@ -201,7 +202,6 @@ export function WritingPad(p: Props) {
     const tryAlternate = async (j: number, held: StrokeEvent, raw: RawStroke) => {
       const k = held.strokeNum;
       switching = true;
-      tried.add(`${k}:${j}`);
       let recorded = false;
       try {
         await Promise.resolve(); // let Hanzi Writer finish ending the stroke before the character is replaced
