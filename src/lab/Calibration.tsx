@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import calibration from '../../content/calibration.json';
+import alternates from '../../content/strokes/alternates.json';
+import type { Alternates } from '../content/alternates';
 import type { CalibrationSet } from '../content/check';
 import { openStoreOrMemory, requestPersistence, type Store } from '../storage/db';
 import { AVATARS, NICKNAMES, newId, type Profile } from '../storage/profiles';
@@ -10,6 +12,7 @@ import { summarizeCalibration } from './calibrationSummary';
 import { downloadJson } from './download';
 
 const SET = calibration as unknown as CalibrationSet;
+const ALTERNATES = alternates as Alternates;
 type Step = { tier: TierId; char: string; expectedChar: string | null; context: 'calibration' | 'lookalike' };
 
 /** Children write tiers in order, easiest first; then an adult runs the look-alike pairs at 見習 and 修行. */
@@ -105,6 +108,7 @@ export function Calibration() {
         key={`${i}-${step.char}`}
         char={step.char} tier={step.tier} profileId={profile.id} context={step.context} word={null} expectedChar={step.expectedChar}
         leniencyInput={lastInput} size={Math.min(420, window.innerWidth - 32)}
+        alternates={ALTERNATES[step.char]?.orders ?? []}
         onInputSeen={setLastInput}
         onFinish={async r => {
           await store.addAttempt(r);

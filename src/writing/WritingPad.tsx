@@ -1,11 +1,12 @@
 import HanziWriter from 'hanzi-writer';
 import { useEffect, useRef, useState } from 'react';
+import { applyOrder, divergeAt } from '../content/alternates';
 import { loadStrokeJson } from '../content/strokeFiles';
 import type { StrokeJson } from '../content/types';
 import { newId } from '../storage/profiles';
-import { finishAttempt, isOverMistakeLimit, recordStroke, startAttempt, type AttemptContext, type AttemptRecord, type AttemptState } from './attempt';
+import { finishAttempt, isOverMistakeLimit, recordStroke, startAttempt, type AttemptContext, type AttemptRecord, type AttemptState, type StrokeEvent } from './attempt';
 import { PalmFilter, classifyPointer } from './input';
-import { RawStrokeQueue } from './rawStrokes';
+import { RawStrokeQueue, type RawStroke } from './rawStrokes';
 import { quizOptionsFor, showOutlineFor, type InputKind, type TierId } from './tiers';
 
 type Props = {
@@ -20,6 +21,8 @@ type Props = {
   onFinish: (r: AttemptRecord) => void;
   onInputSeen: (k: InputKind) => void;
   loader?: (char: string) => Promise<StrokeJson>;
+  /** Second official MOE orders for this character (content/strokes/alternates.json), as permutations of 0..n-1. */
+  alternates?: number[][];
 };
 
 type HwStroke = { strokeNum: number; mistakesOnStroke: number; totalMistakes: number; isBackwards: boolean; drawnPath: { points: { x: number; y: number }[] } };
@@ -82,6 +85,7 @@ export function WritingPad(p: Props) {
         const kind = t.touchType === 'stylus' ? 'pen' : 'finger';
         if (kind === 'pen') { palm.notePen(performance.now()); penSeenThisAttempt = true; }
         if (kind === 'finger' && penSeenThisAttempt) continue;
+        if (switching) continue;
         if (active && !(active.kind === 'finger' && kind === 'pen')) continue;
         if (!active && kind === 'finger' && palm.shouldBlock({ primary: 'direct', now: performance.now() })) continue;
         if (active) stopActive(); // a palm that landed first loses to the Pencil
@@ -116,11 +120,18 @@ export function WritingPad(p: Props) {
     // Hanzi Writer ends its stroke on ANY document touchend, even one that started off the pad (a palm lifting, an
     // iOS touchcancel). Registered before HanziWriter.create, so on document this bubble listener runs before its own.
     const onDocTouchEnd = (e: TouchEvent) => { if (active !== null) e.stopImmediatePropagation(); };
+    // Alternate stroke orders. Hanzi Writer grades one order, so at a stroke where an alternate diverges the pad holds a
+    // rejected stroke, reloads the character in the alternate order and replays the held stroke through Hanzi Writer.
+    const alts = p.alternates ?? [];
+    let order: number[] | null = null; // null = primary
+    const tried = new Set<string>(); // `${stroke}:${alternate}` already tried in this attempt
+    let switching = false; // while a switch/replay is in flight, no new child stroke starts
+    let replay: { held: RawStroke; accepted: boolean } | null = null;
     const compat = (e: MouseEvent) => !synthetic.has(e) && performance.now() - lastTouch < 800;
     let mouseDown = false;
     const onMouseDown = (e: MouseEvent) => {
       if (synthetic.has(e)) return;
-      if (compat(e)) { e.stopPropagation(); e.preventDefault(); return; }
+      if (compat(e) || switching) { e.stopPropagation(); e.preventDefault(); return; }
       mouseDown = true;
       latest.current.onInputSeen('mouse');
       queue.begin('mouse', local(e.clientX, e.clientY));
@@ -150,13 +161,71 @@ export function WritingPad(p: Props) {
     el.addEventListener('mousemove', onMouseMove, true);
     window.addEventListener('mouseup', onMouseUp, true);
 
+    /** Records one stroke; true if it ended the attempt (mistake limit). */
+    const record = (e: StrokeEvent, raw: RawStroke | null) => {
+      if (!state || finished) return true;
+      state = recordStroke(state, e, raw);
+      if (!e.isCorrect && isOverMistakeLimit(state)) { writer.cancelQuiz(); finish('failed'); return true; }
+      return false;
+    };
     const onStroke = (isCorrect: boolean) => (s: HwStroke) => {
       if (!state || finished) return;
-      state = recordStroke(state, {
+      const e: StrokeEvent = {
         strokeNum: s.strokeNum, isCorrect, isBackwards: s.isBackwards, mistakesOnStroke: s.mistakesOnStroke,
         totalMistakes: s.totalMistakes, drawn: s.drawnPath.points.map(({ x, y }) => ({ x, y })),
-      }, queue.take());
-      if (!isCorrect && isOverMistakeLimit(state)) { writer.cancelQuiz(); finish('failed'); }
+      };
+      if (replay) { // Hanzi Writer's verdict on the held stroke under the alternate order
+        if (isCorrect) { replay.accepted = true; state = { ...state, order }; record(e, replay.held); }
+        return;
+      }
+      const raw = queue.take();
+      if (!isCorrect && order === null && raw) {
+        const j = alts.findIndex((alt, n) => divergeAt(alt) === s.strokeNum && !tried.has(`${s.strokeNum}:${n}`));
+        if (j >= 0) { void tryAlternate(j, e, raw); return; }
+      }
+      record(e, raw);
+    };
+    const restart = async (k: number) => {
+      await writer.setCharacter(p.char); // reloads through charDataLoader, so it picks up the current order
+      if (disposed) return;
+      await writer.quiz({ ...quizOptions, quizStartStrokeNum: k }); // strokes before k are shown as written
+    };
+    const replayStroke = (raw: RawStroke) => {
+      const r = el.getBoundingClientRect();
+      const pts = raw.points.map(pt => ({ x: pt.x + r.left, y: pt.y + r.top }));
+      const target = hwTarget();
+      fire('mousedown', target, pts[0]!.x, pts[0]!.y);
+      for (const pt of pts.slice(1)) fire('mousemove', target, pt.x, pt.y);
+      fire('mouseup', document, pts.at(-1)!.x, pts.at(-1)!.y);
+    };
+    const tryAlternate = async (j: number, held: StrokeEvent, raw: RawStroke) => {
+      const k = held.strokeNum;
+      switching = true;
+      tried.add(`${k}:${j}`);
+      let recorded = false;
+      try {
+        await Promise.resolve(); // let Hanzi Writer finish ending the stroke before the character is replaced
+        order = alts[j]!;
+        await restart(k);
+        if (disposed || !state || finished) return;
+        const outcome = { held: raw, accepted: false };
+        replay = outcome;
+        try { replayStroke(raw); } finally { replay = null; }
+        if (outcome.accepted) return; // recorded in onStroke; the attempt continues in the alternate order
+        // Rejected (or no verdict): wrong under both orders. One mistake, and back to the textbook order so the hint
+        // and outline guide it.
+        order = null;
+        recorded = true;
+        if (record(held, raw)) return;
+        await restart(k);
+        if (!disposed && state?.strokes.at(-1)?.hintShownAfter) writer.highlightStroke(k).catch(() => {});
+      } catch {
+        order = null;
+        if (!recorded) { recorded = true; if (record(held, raw)) return; }
+        try { if (!disposed) await restart(k); } catch { /* nothing more to do */ }
+      } finally {
+        switching = false;
+      }
     };
 
     const loader = p.loader ?? loadStrokeJson;
@@ -164,21 +233,23 @@ export function WritingPad(p: Props) {
     let disposed = false;
     const first = Promise.resolve().then(() => loader(p.char));
     first.catch(() => { if (!disposed) setError(`找不到「${p.char}」的筆順資料`); });
+    const quizOptions = {
+      ...quizOptionsFor(p.tier, p.leniencyInput),
+      onCorrectStroke: onStroke(true),
+      onMistake: onStroke(false),
+      onComplete: () => finish('passed'),
+    };
     const writer = HanziWriter.create(hwEl, p.char, {
       width: p.size, height: p.size, padding: Math.round(p.size * 0.06),
       showOutline: showOutlineFor(p.tier), showCharacter: false, renderer: 'svg',
       outlineColor: '#DDD', drawingColor: '#222', drawingWidth: Math.max(8, Math.round(p.size / 30)),
       onLoadCharDataError: () => {},
       charDataLoader: (c: string, onLoad: (d: StrokeJson) => void, onError: (e?: unknown) => void) => {
-        (c === p.char ? first : loader(c)).then(onLoad, err => { onError(err); });
+        const o = order; // one network load: an alternate order permutes the already-loaded base data
+        (c === p.char ? first : loader(c)).then(d => onLoad(o && c === p.char ? applyOrder(d, o) : d), err => { onError(err); });
       },
     });
-    writer.quiz({
-      ...quizOptionsFor(p.tier, p.leniencyInput),
-      onCorrectStroke: onStroke(true),
-      onMistake: onStroke(false),
-      onComplete: () => finish('passed'),
-    }).catch(() => {});
+    writer.quiz(quizOptions).catch(() => {});
 
     return () => {
       disposed = true;

@@ -5,7 +5,7 @@ const m = vi.hoisted(() => ({
   saved: false,
   persist: 'granted' as 'granted' | 'denied' | 'unsupported',
   putProfile: vi.fn(async (_p: unknown) => {}),
-  padProps: [] as { leniencyInput: string }[],
+  padProps: [] as { char: string; leniencyInput: string; alternates?: number[][] }[],
 }));
 const profile = { id: 'p1', nickname: '小猴', avatar: '🐒', curriculumId: 'kangxuan-g2-1', lesson: 1, tier: 'practice', lastInput: 'pen', createdAt: 0 };
 vi.mock('../storage/db', () => ({
@@ -19,8 +19,8 @@ vi.mock('../storage/db', () => ({
   requestPersistence: async () => m.persist,
 }));
 vi.mock('../writing/WritingPad', () => ({
-  WritingPad: (p: { char: string; leniencyInput: string; onFinish: (r: unknown) => void }) => {
-    m.padProps.push({ leniencyInput: p.leniencyInput });
+  WritingPad: (p: { char: string; leniencyInput: string; alternates?: number[][]; onFinish: (r: unknown) => void }) => {
+    m.padProps.push({ char: p.char, leniencyInput: p.leniencyInput, alternates: p.alternates });
     const rec = (result: string, inputs: string[]) => ({ id: 'a', profileId: 'p1', char: p.char, expectedChar: null, word: null, context: 'calibration', tier: 'apprentice', leniencyInput: p.leniencyInput, inputs, outlineVisible: false, hintShown: false, strokes: [], totalMistakes: 0, result, checker: 'c', startedAt: 0, endedAt: 1 });
     return (
       <>
@@ -84,4 +84,11 @@ test('a browser without persistent storage shows a warning (item 10)', async () 
   m.persist = 'unsupported';
   render(<Calibration />);
   expect((await screen.findByRole('alert')).textContent).toBe('This browser cannot promise to keep this data (no persistent storage).');
+});
+
+test('the pad gets the second official MOE order for 方, and none for a character without one', async () => {
+  await startChildRun();
+  expect(m.padProps.at(-1)).toMatchObject({ char: '木', alternates: [] });
+  for (let n = 0; n < 10 && m.padProps.at(-1)?.char !== '方'; n++) fireEvent.click(screen.getByText('Skip'));
+  expect(m.padProps.at(-1)).toMatchObject({ char: '方', alternates: [[0, 1, 3, 2]] });
 });
