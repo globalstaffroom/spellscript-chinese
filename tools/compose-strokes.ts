@@ -1,5 +1,5 @@
 import { mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
-import { compose, type Recipe } from '../src/content/compose';
+import { compose, reverseMedians, type Recipe } from '../src/content/compose';
 import type { StrokeJson } from '../src/content/types';
 import { contentPath, hanziWriterData, loadZhHant, readJson } from './lib/sources';
 
@@ -21,7 +21,8 @@ for (const f of readdirSync(contentPath('strokes/overrides'))) {
   console.log(`deleted stale override ${f} (no recipe)`);
 }
 for (const r of recipes) {
-  const out = compose(r.baseChar ? lookup(r.baseChar) : null, r.ops.map(op => ({ op, donor: lookup(op.donor.char) })));
+  const composed = compose(r.baseChar ? lookup(r.baseChar) : null, r.ops.map(op => ({ op, donor: lookup(op.donor.char) })));
+  const out = r.reverse?.length ? reverseMedians(composed, r.reverse) : composed;
   writeFileSync(contentPath('strokes/overrides', `${r.char}.json`), JSON.stringify(out) + '\n');
   console.log(`${r.char}: ${out.strokes.length} strokes`);
 }

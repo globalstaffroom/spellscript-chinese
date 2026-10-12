@@ -26,6 +26,21 @@ export function normaliseMoe(tracks: Pt[][]): Track[] {
   });
 }
 
+/**
+ * Second-opinion normalisation: map a character's own bounding box (min/max over all start and end points) into the
+ * unit square — uniform scale on the larger side, centred on (0.5, 0.5). Removes offset and size differences
+ * between our font and MOE's.
+ */
+export function alignToBox(tracks: Track[]): Track[] {
+  const pts = tracks.flatMap(t => [t.start, t.end]);
+  if (!pts.length) return [];
+  const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
+  const x0 = Math.min(...xs), y0 = Math.min(...ys), w = Math.max(...xs) - x0, h = Math.max(...ys) - y0;
+  const s = Math.max(w, h) || 1, cx = x0 + w / 2, cy = y0 + h / 2;
+  const f = (p: Pt): Pt => [(p[0] - cx) / s + 0.5, (p[1] - cy) / s + 0.5];
+  return tracks.map(t => ({ start: f(t.start), end: f(t.end) }));
+}
+
 const dist = (a: Pt, b: Pt) => Math.hypot(a[0] - b[0], a[1] - b[1]);
 export const forwardCost = (a: Track, b: Track) => dist(a.start, b.start) + dist(a.end, b.end);
 export const reversedCost = (a: Track, b: Track) => dist(a.start, b.end) + dist(a.end, b.start);
@@ -109,6 +124,13 @@ export type MatchResult = {
  * See docs/stroke-check/2026-10-12-moe-check.md.
  */
 export const DEFAULT_THRESHOLD = 0.23;
+
+/**
+ * Threshold for the aligned (own-bounding-box) second opinion. Calibration 2026-10-12 found NO value that passes
+ * the controls: a founder-verified character needs ≥ 0.323 (田) but a look-alike is accepted from 0.258 (午↔牛).
+ * moe-check --aligned --apply therefore refuses (controls fail at any threshold); 0.25 is kept only for reporting.
+ */
+export const ALIGNED_THRESHOLD = 0.25;
 
 /**
  * Match our strokes against MOE strokes.

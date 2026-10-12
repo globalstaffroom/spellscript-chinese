@@ -1,4 +1,4 @@
-import { compose, medianBox, transformPath } from './compose';
+import { compose, medianBox, reverseMedians, transformPath } from './compose';
 import type { StrokeJson } from './types';
 
 const line = (x1: number, y1: number, x2: number, y2: number) => ({ d: `M ${x1} ${y1} L ${x2} ${y2} Z`, m: [[x1, y1], [x2, y2]] });
@@ -50,4 +50,21 @@ test('an insert lands before the kept base stroke at insertAt', () => {
   expect(out.medians[0]).toEqual([[0, 0], [10, 0]]);
   expect(out.medians[1]).toEqual([[0, 200], [10, 200]]);
   expect(out.medians[2]).toEqual([[0, 100], [10, 100]]);
+});
+
+test('reverseMedians flips only the named medians, leaving outlines, other medians and the input untouched', () => {
+  const data = char(line(0, 0, 10, 0), line(0, 100, 10, 120), line(0, 200, 10, 200));
+  data.medians[1] = [[0, 100], [5, 110], [10, 120]];
+  const out = reverseMedians(data, [1]);
+  expect(out.medians[1]).toEqual([[10, 120], [5, 110], [0, 100]]);
+  expect(out.medians[0]).toEqual([[0, 0], [10, 0]]);
+  expect(out.medians[2]).toEqual([[0, 200], [10, 200]]);
+  expect(out.strokes).toEqual(data.strokes);
+  expect(data.medians[1]).toEqual([[0, 100], [5, 110], [10, 120]]);
+});
+
+test('reverseMedians throws on an out-of-range index', () => {
+  const data = char(line(0, 0, 10, 0), line(0, 100, 10, 100));
+  expect(() => reverseMedians(data, [2])).toThrow(/out of range/);
+  expect(() => reverseMedians(data, [-1])).toThrow(/out of range/);
 });

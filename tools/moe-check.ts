@@ -18,7 +18,7 @@ import type { Alternates } from '../src/content/alternates';
 import type { StrokeReport, Verified } from '../src/content/check';
 import type { Recipe } from '../src/content/compose';
 import {
-  DEFAULT_THRESHOLD, extractMoeXml, hasVersion2, matchStrokes, normaliseMoe, normaliseOurs, parseMoeXml,
+  ALIGNED_THRESHOLD, DEFAULT_THRESHOLD, alignToBox, extractMoeXml, hasVersion2, matchStrokes, normaliseMoe, normaliseOurs, parseMoeXml,
   type MatchResult, type Track,
 } from '../src/content/moeMatch';
 import { charToFile } from '../src/content/strokeFiles';
@@ -32,7 +32,9 @@ const TODAY = new Date().toISOString().slice(0, 10);
 const METHOD = 'track start/end match vs MOE 筆順學習網 v1';
 const arg = (name: string) => process.argv.find(a => a.startsWith(`--${name}=`))?.split('=')[1];
 const flag = (name: string) => process.argv.includes(`--${name}`);
-const THRESHOLD = Number(arg('threshold') ?? DEFAULT_THRESHOLD);
+const ALIGNED = flag('aligned');
+const THRESHOLD = Number(arg('threshold') ?? (ALIGNED ? ALIGNED_THRESHOLD : DEFAULT_THRESHOLD));
+const METHOD_ALIGNED = 'aligned track match vs MOE v1';
 const OFFLINE = flag('offline');
 
 export const moeLink = (char: string) => `${BASE}/searchW.jsp?ID2=1&WORD=${encodeURIComponent(char)}`;
@@ -104,8 +106,12 @@ const ours = (char: string): StrokeJson | null => {
 
 function run(oursData: StrokeJson, moe: MoeVersion): CharResult['v1'] {
   if (!('tracks' in moe)) return { outcome: 'notfound', reason: moe.error };
-  return matchStrokes(normaliseOurs(oursData.medians), moe.tracks, THRESHOLD);
+  return ALIGNED
+    ? matchStrokes(alignToBox(normaliseOurs(oursData.medians)), alignToBox(moe.tracks), THRESHOLD)
+    : matchStrokes(normaliseOurs(oursData.medians), moe.tracks, THRESHOLD);
 }
+const runPass1 = (oursData: StrokeJson, moe: MoeVersion): CharResult['v1'] =>
+  'tracks' in moe ? matchStrokes(normaliseOurs(oursData.medians), moe.tracks, DEFAULT_THRESHOLD) : { outcome: 'notfound', reason: moe.error };
 
 async function checkAll(chars: { char: string; source: string | null }[]): Promise<CharResult[]> {
   const out: CharResult[] = [];
@@ -183,7 +189,7 @@ async function controls(): Promise<boolean> {
     if (r.outcome !== 'match') misses.push(`${c} ${r.outcome}: ${r.reason}`);
   }
   expect(`${founder.length} founder-verified → match`, misses.length ? misses.join('; ') : 'all match', !misses.length);
-  console.log(`Controls (threshold ${THRESHOLD}):\n` + lines.join('\n'));
+  console.log(`Controls (${ALIGNED ? 'ALIGNED metric, ' : ''}threshold ${THRESHOLD}):\n` + lines.join('\n'));
   return ok;
 }
 
@@ -201,7 +207,7 @@ function apply(results: CharResult[]) {
     const prev = verified[r.char];
     if (r.v1.outcome === 'match') {
       if (!prev) { verified[r.char] = { by: 'moe-auto', date: TODAY, method: METHOD }; verifiedAdded++; }
-    } else if (prev?.by === 'moe-auto') {
+    } else if (prev?.by === 'moe-auto' && prev.method === METHOD) {
       delete verified[r.char]; verifiedRemoved++; log.push(`${r.char}: moe-auto verification withdrawn (${r.v1.outcome})`);
     }
     if (r.v1.outcome === 'reorder') {
@@ -217,6 +223,26 @@ function apply(results: CharResult[]) {
           char: r.char, baseChar: r.char,
           ops: [{ remove: r.v1.order.map((_, i) => i), insertAt: 0, donor: { char: r.char, strokes: r.v1.order } }],
           note: `Auto reorder (moe-check ${TODAY}): our own ${r.source} strokes in MOE 筆順學習網 v1 order.`,
+        });
+        reorderRecipes++;
+      }
+    }
+    if (r.v1.outcome === 'reversed') {
+      const res = r.v1;
+      const existing = recipes.find(x => x.char === r.char);
+      const base = zhHant.get(r.char) ?? hanziWriterData(r.char);
+      const servedIsBase = r.source === 'animcjk-zhHant' || (r.source === 'hanzi-writer-data' && !zhHant.has(r.char));
+      if (existing) log.push(`${r.char}: reversed stroke(s) but it already has a compose recipe — founder`);
+      else if (!servedIsBase || !base || base.medians.length !== res.order.length) log.push(`${r.char}: reversed but served data (${r.source}) is not the compose base — founder`);
+      else {
+        const identity = res.order.every((o, k) => o === k);
+        recipes.push({
+          char: r.char, baseChar: r.char,
+          ops: identity ? [] : [{ remove: res.order.map((_, i) => i), insertAt: 0, donor: { char: r.char, strokes: res.order } }],
+          // Indices in the final (MOE) order.
+          reverse: res.reversedAt,
+          note: `Auto direction fix (moe-check ${TODAY}): our own ${r.source} strokes${identity ? '' : ' in MOE 筆順學習網 v1 order'}, ` +
+            `median of stroke(s) ${res.reversedAt.map(k => k + 1).join(', ')} reversed to MOE's direction.`,
         });
         reorderRecipes++;
       }
@@ -243,12 +269,49 @@ function apply(results: CharResult[]) {
   for (const l of log) console.log('  ' + l);
 }
 
+/** Second opinion (aligned metric) for the unverified and the near-cutoff pass-1 verifications. */
+function applyAligned(results: CharResult[], pass1: Map<string, CharResult['v1']>) {
+  const vPath = contentPath('strokes/verified.json');
+  const verified = readJson<Verified>(vPath);
+  const recipes = readJson<Recipe[]>(contentPath('strokes/compose-recipes.json'));
+  const zhHant = loadZhHant();
+  const log: string[] = [];
+  let added = 0, withdrawn = 0, reorders = 0;
+  for (const r of results) {
+    const prev = verified[r.char], p1 = pass1.get(r.char)!;
+    const near = prev?.by === 'moe-auto' && prev.method === METHOD && 'costs' in p1 && Math.max(...p1.costs) >= 0.2;
+    const candidate = !prev || near || (prev.by === 'moe-auto' && prev.method === METHOD_ALIGNED);
+    if (!candidate) continue;
+    const a = r.v1;
+    if (a.outcome === 'match') {
+      if (!prev) { verified[r.char] = { by: 'moe-auto', date: TODAY, method: METHOD_ALIGNED }; added++; log.push(`${r.char}: aligned match → verified`); }
+      else log.push(`${r.char}: ${near ? 'near-cutoff, aligned agrees' : 'aligned match (already)'}`);
+      continue;
+    }
+    if (prev?.by === 'moe-auto') { delete verified[r.char]; withdrawn++; log.push(`${r.char}: aligned ${a.outcome} → moe-auto withdrawn (${a.reason})`); }
+    if (a.outcome === 'reorder' && !prev) {
+      const servedIsBase = r.source === 'animcjk-zhHant' || (r.source === 'hanzi-writer-data' && !zhHant.has(r.char));
+      if (recipes.some(x => x.char === r.char) || !servedIsBase) log.push(`${r.char}: aligned reorder but not a self-recipe candidate (${r.source}) — founder`);
+      else {
+        recipes.push({ char: r.char, baseChar: r.char,
+          ops: [{ remove: a.order.map((_, i) => i), insertAt: 0, donor: { char: r.char, strokes: a.order } }],
+          note: `Auto reorder (moe-check aligned ${TODAY}): our own ${r.source} strokes in MOE 筆順學習網 v1 order.` });
+        reorders++; log.push(`${r.char}: aligned reorder → recipe [${a.order}]`);
+      }
+    } else log.push(`${r.char}: aligned ${a.outcome} — founder (${a.reason})`);
+  }
+  writeFileSync(vPath, JSON.stringify(verified, null, 1) + '\n');
+  writeFileSync(contentPath('strokes/compose-recipes.json'), JSON.stringify(recipes, null, 2) + '\n');
+  console.log(`aligned apply: verified +${added} -${withdrawn}, reorder recipes +${reorders}`);
+  for (const l of log) console.log('  ' + l);
+}
+
 async function main() {
   mkdirSync(CACHE, { recursive: true });
   if (flag('controls')) process.exit((await controls()) ? 0 : 1);
   const report = readJson<StrokeReport>(contentPath('strokes/report.json'));
   const results = await checkAll(report.chars.map(c => ({ char: c.char, source: c.source })));
-  writeFileSync(path.join(CACHE, 'results.json'), JSON.stringify({ threshold: THRESHOLD, date: TODAY, results }, null, 1));
+  writeFileSync(path.join(CACHE, ALIGNED ? 'results-aligned.json' : 'results.json'), JSON.stringify({ threshold: THRESHOLD, date: TODAY, results }, null, 1));
   const tally = (pick: (r: CharResult) => string) =>
     Object.entries(results.reduce<Record<string, number>>((a, r) => ({ ...a, [pick(r)]: (a[pick(r)] ?? 0) + 1 }), {}));
   console.log(`v1 outcomes (threshold ${THRESHOLD}): ` + tally(r => r.v1.outcome).map(([k, n]) => `${k} ${n}`).join(', '));
@@ -258,7 +321,11 @@ async function main() {
   if (flag('apply')) {
     if (fetchFailures.length) { console.error('Fetch failures — nothing applied. Run again to fill the cache.'); process.exit(1); }
     if (!(await controls())) { console.error('Controls failed — nothing applied.'); process.exit(1); }
-    apply(results);
+    if (ALIGNED) {
+      const pass1 = new Map<string, CharResult['v1']>();
+      for (const r of results) pass1.set(r.char, runPass1(ours(r.char)!, (await moeVersions(r.char)).v1));
+      applyAligned(results, pass1);
+    } else apply(results);
   }
 }
 

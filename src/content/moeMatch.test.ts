@@ -1,5 +1,5 @@
 import {
-  assign, bruteForce, extractMoeXml, forwardCost, hasVersion2, hungarian, matchStrokes, normaliseMoe, normaliseOurs,
+  alignToBox, assign, bruteForce, extractMoeXml, forwardCost, hasVersion2, hungarian, matchStrokes, normaliseMoe, normaliseOurs,
   parseMoeXml, reversedCost, type Track,
 } from './moeMatch';
 
@@ -129,4 +129,18 @@ test('hasVersion2 needs both 有另一種寫法 and an ST=2 link', () => {
   expect(hasVersion2(page(xml))).toBe(false);
   expect(hasVersion2(page(xml, '有另一種寫法'))).toBe(false);
   expect(hasVersion2(page(xml, "<a href='/dictView.jsp?ID=1&ST=2&WORD='>2</a>"))).toBe(false);
+});
+
+test('alignToBox maps the bounding box to the unit square: uniform scale on the larger side, centred', () => {
+  // Box x 0.2..0.6 (w 0.4), y 0.1..0.3 (h 0.2): scale by 0.4, so y spans 0.25..0.75.
+  const out = alignToBox([{ start: [0.2, 0.1], end: [0.6, 0.3] }]);
+  expect(out[0]!.start[0]).toBeCloseTo(0); expect(out[0]!.start[1]).toBeCloseTo(0.25);
+  expect(out[0]!.end[0]).toBeCloseTo(1); expect(out[0]!.end[1]).toBeCloseTo(0.75);
+});
+
+test('alignToBox makes a shifted, scaled copy of a character identical (cost 0 match)', () => {
+  const copy = moe.map(t => ({ start: [t.start[0] * 0.7 + 0.1, t.start[1] * 0.7 + 0.05], end: [t.end[0] * 0.7 + 0.1, t.end[1] * 0.7 + 0.05] }) as Track);
+  expect(matchStrokes(copy, moe, 0.05).outcome).toBe('nomatch');
+  const r = matchStrokes(alignToBox(copy), alignToBox(moe), 0.001);
+  expect(r.outcome).toBe('match');
 });

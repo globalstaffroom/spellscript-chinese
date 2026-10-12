@@ -2,7 +2,20 @@ import type { StrokeJson } from './types';
 
 export type Box = { minX: number; minY: number; maxX: number; maxY: number };
 export type ComposeOp = { remove: number[]; insertAt: number; donor: { char: string; strokes: number[] | 'all' }; targetBox?: Box };
-export type Recipe = { char: string; baseChar: string | null; ops: ComposeOp[]; note: string };
+/**
+ * `reverse`: stroke indices in the FINAL output order (after ops) whose medians are reversed (point order flipped,
+ * so Hanzi Writer expects the stroke drawn the other way). Outlines are unchanged.
+ */
+export type Recipe = { char: string; baseChar: string | null; ops: ComposeOp[]; reverse?: number[]; note: string };
+
+/** The data with the medians of the given strokes reversed; strokes (outlines) and all other medians untouched. */
+export function reverseMedians(data: StrokeJson, idx: number[]): StrokeJson {
+  for (const i of idx) {
+    if (!Number.isInteger(i) || i < 0 || i >= data.medians.length) throw new Error(`reverse index ${i} out of range (${data.medians.length} strokes)`);
+  }
+  const rev = new Set(idx);
+  return { strokes: [...data.strokes], medians: data.medians.map((m, i) => (rev.has(i) ? [...m].reverse() : m)) };
+}
 
 export function medianBox(medians: number[][][]): Box {
   const pts = medians.flat();
