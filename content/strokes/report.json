@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-10T07:21:11.069Z",
+ "generatedAt": "2026-10-12T04:58:11.712Z",
  "chars": [
   {
    "char": "年",
@@ -193,7 +193,7 @@
   {
    "char": "夾",
    "expected": 7,
-   "source": "hanzi-writer-data",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -627,7 +627,7 @@
   {
    "char": "識",
    "expected": 19,
-   "source": "animcjk-zhHant",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -1173,7 +1173,7 @@
   {
    "char": "牠",
    "expected": 7,
-   "source": "hanzi-writer-data",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -1201,7 +1201,7 @@
   {
    "char": "圍",
    "expected": 12,
-   "source": "animcjk-zhHant",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -1236,7 +1236,7 @@
   {
    "char": "愉",
    "expected": 12,
-   "source": "hanzi-writer-data",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -1250,7 +1250,7 @@
   {
    "char": "鍋",
    "expected": 17,
-   "source": "hanzi-writer-data",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -1264,7 +1264,7 @@
   {
    "char": "皮",
    "expected": 5,
-   "source": "animcjk-zhHant",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -1642,7 +1642,7 @@
   {
    "char": "糧",
    "expected": 18,
-   "source": "hanzi-writer-data",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -1796,7 +1796,7 @@
   {
    "char": "彼",
    "expected": 8,
-   "source": "hanzi-writer-data",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -1873,7 +1873,7 @@
   {
    "char": "衛",
    "expected": 15,
-   "source": "animcjk-zhHant",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -1957,7 +1957,7 @@
   {
    "char": "勵",
    "expected": 17,
-   "source": "hanzi-writer-data",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -1985,7 +1985,7 @@
   {
    "char": "憑",
    "expected": 16,
-   "source": "hanzi-writer-data",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -2041,7 +2041,7 @@
   {
    "char": "秀",
    "expected": 7,
-   "source": "hanzi-writer-data",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -2076,7 +2076,7 @@
   {
    "char": "瑪",
    "expected": 14,
-   "source": "hanzi-writer-data",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -2111,7 +2111,7 @@
   {
    "char": "攀",
    "expected": 19,
-   "source": "hanzi-writer-data",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -2174,7 +2174,7 @@
   {
    "char": "哩",
    "expected": 10,
-   "source": "hanzi-writer-data",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },
@@ -2559,7 +2559,7 @@
   {
    "char": "遍",
    "expected": 13,
-   "source": "animcjk-zhHant",
+   "source": "override",
    "rejected": [],
    "overrideMismatch": false
   },

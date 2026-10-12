@@ -734,5 +734,726 @@
       }
     ],
     "note": "No source has 鎚. Base hanzi-writer-data 鎖 (18): its 金 (strokes 0-7, order matches the 康軒 4上 card) is narrowed with an explicit box, and the right part is replaced by AnimCJK 追 (10, Taiwan 4-stroke 辶) in a wider box so the 辶 has room. Founder check: the least natural junction of the set (narrowed 金 against widened 追); confirm on #/review that it reads as 鎚."
+  },
+  {
+    "char": "夾",
+    "baseChar": "夾",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "夾",
+          "strokes": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            1,
+            2
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own hanzi-writer-data strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "識",
+    "baseChar": "識",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "識",
+          "strokes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            18,
+            17
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own animcjk-zhHant strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "牠",
+    "baseChar": "牠",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "牠",
+          "strokes": [
+            0,
+            1,
+            3,
+            2,
+            4,
+            5,
+            6
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own hanzi-writer-data strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "圍",
+    "baseChar": "圍",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "圍",
+          "strokes": [
+            0,
+            1,
+            3,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own animcjk-zhHant strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "愉",
+    "baseChar": "愉",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "愉",
+          "strokes": [
+            0,
+            2,
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own hanzi-writer-data strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "鍋",
+    "baseChar": "鍋",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "鍋",
+          "strokes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11,
+            10,
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own hanzi-writer-data strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "皮",
+    "baseChar": "皮",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "皮",
+          "strokes": [
+            1,
+            0,
+            2,
+            3,
+            4
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own animcjk-zhHant strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "糧",
+    "baseChar": "糧",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "糧",
+          "strokes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16,
+            15,
+            17
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own hanzi-writer-data strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "彼",
+    "baseChar": "彼",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "彼",
+          "strokes": [
+            0,
+            1,
+            2,
+            4,
+            3,
+            5,
+            6,
+            7
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own hanzi-writer-data strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "衛",
+    "baseChar": "衛",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "衛",
+          "strokes": [
+            0,
+            1,
+            2,
+            4,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own animcjk-zhHant strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "勵",
+    "baseChar": "勵",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "勵",
+          "strokes": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own hanzi-writer-data strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "憑",
+    "baseChar": "憑",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "憑",
+          "strokes": [
+            0,
+            1,
+            3,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own hanzi-writer-data strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "秀",
+    "baseChar": "秀",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "秀",
+          "strokes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            5
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own hanzi-writer-data strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "瑪",
+    "baseChar": "瑪",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "瑪",
+          "strokes": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own hanzi-writer-data strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "攀",
+    "baseChar": "攀",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "攀",
+          "strokes": [
+            4,
+            5,
+            6,
+            7,
+            0,
+            1,
+            2,
+            3,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own hanzi-writer-data strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "哩",
+    "baseChar": "哩",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "哩",
+          "strokes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            7,
+            9
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own hanzi-writer-data strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "遍",
+    "baseChar": "遍",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "遍",
+          "strokes": [
+            0,
+            3,
+            1,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        }
+      }
+    ],
+    "note": "Auto reorder (moe-check 2026-10-12): our own animcjk-zhHant strokes in MOE 筆順學習網 v1 order."
   }
 ]
