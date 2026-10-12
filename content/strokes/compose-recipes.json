@@ -1455,5 +1455,174 @@
       }
     ],
     "note": "Auto reorder (moe-check 2026-10-12): our own animcjk-zhHant strokes in MOE 筆順學習網 v1 order."
+  },
+  {
+    "char": "飄",
+    "baseChar": "飄",
+    "ops": [],
+    "reverse": [
+      13
+    ],
+    "note": "Auto direction fix (moe-check 2026-10-12): our own hanzi-writer-data strokes, median of stroke(s) 14 reversed to MOE's direction."
+  },
+  {
+    "char": "泥",
+    "baseChar": "泥",
+    "ops": [],
+    "reverse": [
+      6
+    ],
+    "note": "Auto direction fix (moe-check 2026-10-12): our own hanzi-writer-data strokes, median of stroke(s) 7 reversed to MOE's direction."
+  },
+  {
+    "char": "貨",
+    "baseChar": "貨",
+    "ops": [],
+    "reverse": [
+      2
+    ],
+    "note": "Auto direction fix (moe-check 2026-10-12): our own hanzi-writer-data strokes, median of stroke(s) 3 reversed to MOE's direction."
+  },
+  {
+    "char": "偕",
+    "baseChar": "偕",
+    "ops": [],
+    "reverse": [
+      4
+    ],
+    "note": "Auto direction fix (moe-check 2026-10-12): our own hanzi-writer-data strokes, median of stroke(s) 5 reversed to MOE's direction."
+  },
+  {
+    "char": "尼",
+    "baseChar": "尼",
+    "ops": [],
+    "reverse": [
+      3
+    ],
+    "note": "Auto direction fix (moe-check 2026-10-12): our own hanzi-writer-data strokes, median of stroke(s) 4 reversed to MOE's direction."
+  },
+  {
+    "char": "鬱",
+    "baseChar": "鬱",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "鬱",
+          "strokes": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            0,
+            1,
+            2,
+            3,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ]
+        }
+      }
+    ],
+    "reverse": [
+      24
+    ],
+    "note": "Auto direction fix (moe-check 2026-10-12): our own hanzi-writer-data strokes in MOE 筆順學習網 v1 order, median of stroke(s) 25 reversed to MOE's direction."
+  },
+  {
+    "char": "背",
+    "baseChar": "背",
+    "ops": [],
+    "reverse": [
+      3
+    ],
+    "note": "Auto direction fix (moe-check 2026-10-12): our own animcjk-zhHant strokes, median of stroke(s) 4 reversed to MOE's direction."
+  },
+  {
+    "char": "匙",
+    "baseChar": "匙",
+    "ops": [],
+    "reverse": [
+      9
+    ],
+    "note": "Auto direction fix (moe-check 2026-10-12): our own hanzi-writer-data strokes, median of stroke(s) 10 reversed to MOE's direction."
+  },
+  {
+    "char": "追",
+    "baseChar": "追",
+    "ops": [
+      {
+        "remove": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "insertAt": 0,
+        "donor": {
+          "char": "白",
+          "strokes": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      }
+    ],
+    "note": "Founder decision 2026-10-12: teach the 康軒 4上 L11 card's 9 strokes, not MOE's 10. Base AnimCJK 追 (10, MOE form); its 6-stroke top (撇 豎 橫折 橫 橫折 橫) replaced by AnimCJK 白 0-4 (撇 豎 橫折 橫 橫), the card's 5-stroke top, in the same box. Taiwan 4-stroke 辶 (AnimCJK 追 6-9) unchanged, written last. Founder check: shape of the 白-form top."
   }
 ]
