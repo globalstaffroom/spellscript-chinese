@@ -9,7 +9,8 @@
     "test": "vitest run",
     "build-strokes": "tsx tools/build-strokes.ts",
     "compose-strokes": "tsx tools/compose-strokes.ts",
-    "check-content": "tsx tools/check-content.ts"
+    "check-content": "tsx tools/check-content.ts",
+    "moe-check": "tsx tools/moe-check.ts"
   },
   "dependencies": {
     "hanzi-writer": "3.7.3",

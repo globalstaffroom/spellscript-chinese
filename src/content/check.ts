@@ -12,7 +12,7 @@ export type ReportEntry = {
   overrideMismatch: boolean;
 };
 export type StrokeReport = { generatedAt: string; chars: ReportEntry[] };
-export type Verified = Record<string, { by: string; date: string }>;
+export type Verified = Record<string, { by: string; date: string; method?: string }>;
 export type CalibrationSet = {
   tiers: Record<'apprentice' | 'practice' | 'master', string[]>;
   lookalikes: [string, string][];
